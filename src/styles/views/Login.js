@@ -1,56 +1,35 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { azul, azulF, blanco, gris } from "../colors";
+import { gris } from "../colors";
 
-export const Select = styled.select`
-  background-color: ${azulF};
-  padding: 1rem 3rem;
-  border: none;
-  border-radius: 0.5rem;
-  color: ${blanco};
-  margin-bottom: 3rem;
+export const Title = styled.p`
+  text-align: center;
+  margin: 1rem 0;
+  font-size: 3rem;
 `;
-export const ContainerButtons = styled.div`
-  width: 100%;
-  margin: 2rem 0;
+
+export const Form = styled.form`
+  width: 90%;
+  margin: 0 auto;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-`;
-export const Center = styled.div`
-  width: 100%;
-  display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-`;
-export const Or = styled.div`
-  font-weight: bold;
-  z-index: 100;
-  background-color: ${azul};
-  border: 2px solid ${azul};
-  border-radius: 50%;
-  padding: 1rem; ;
 `;
 
-export const Line = styled.div`
-  width: 70%;
-  height: 0.1rem;
-  background-color: ${gris};
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+export const ContainerInput = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 1rem 0;
 `;
 
-export const P = styled.p`
-  color: ${blanco};
-  margin-bottom: 1rem;
+export const Label = styled.label`
+  color: ${gris};
 `;
 
-export const StyledLink = styled(Link)`
-  color: ${blanco};
+export const Input = styled.input`
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid grey;
+  margin: 0.5rem 0;
 `;

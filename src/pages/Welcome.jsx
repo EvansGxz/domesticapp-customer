@@ -12,7 +12,7 @@ import {
   Select,
   P,
   StyledLink,
-} from "../styles/views/Login";
+} from "../styles/views/Welcome";
 
 const Welcome = () => {
   const navigate = useNavigate();
