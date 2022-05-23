@@ -1,13 +1,22 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+.body-color {
+  background-color: #0bbbef;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+svg {
+  fill: currentColor;
+  vertical-align: bottom;
+}
+
+body {
+  font-family: "Poppins";
+}
+.react-datepicker {
+  background-color: transparent !important;
+  border: none !important;
+}
+.react-datepicker__header {
+  background-color: transparent !important;
+  border: none !important;
 }
