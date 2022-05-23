@@ -5,25 +5,20 @@ import "./index.css";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import { hydrate, render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import { AuthProvider } from "./context/auth-context";
 import App from "./App";
 const rootElement = document.getElementById("root");
 
 if (rootElement.hasChildNodes()) {
   hydrate(
     <BrowserRouter>
-      <AuthProvider>
         <App />
-      </AuthProvider>
     </BrowserRouter>,
     rootElement
   );
 } else {
   render(
     <BrowserRouter>
-      <AuthProvider>
         <App />
-      </AuthProvider>
     </BrowserRouter>,
     rootElement
   );
