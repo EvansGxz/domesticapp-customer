@@ -1,4 +1,4 @@
-import supportText from "../constantes/paragraph";
+import supportText from "../../constantes/paragraph"
 
 function Support(){
 return(

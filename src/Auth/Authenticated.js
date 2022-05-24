@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
 import { Navigate } from "react-router-dom";
 import Home from "../pages/Home";
-import Support from "../pages/Support";
+import Support from "../pages/support/Support";
 import { GlobalStyle } from "../styles/GlobalStyle";
 
 

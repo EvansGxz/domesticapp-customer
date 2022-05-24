@@ -1,4 +1,4 @@
-import faqText from "../../constantes/paragraph";
+import faqText from "../../constantes/paragraph"
 
 function Support(){
 return(
