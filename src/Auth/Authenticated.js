@@ -5,19 +5,17 @@ import { Routes, Route } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
 import { Navigate } from "react-router-dom";
 import Home from "../pages/Home";
-import styled from "@emotion/styled";
 import Support from "../pages/Support";
+import { GlobalStyle } from "../styles/GlobalStyle";
 
-const Container = styled.div``;
-
-const MainContainer = styled.main``;
 
 function Authenticated() {
   const { user } = useAuth();
   console.log(user);
   return (
-    <Container>
-      <MainContainer>
+    <>
+    <GlobalStyle />
+
         <Routes>
           {user.full_name ? (
             <>
@@ -50,8 +48,7 @@ function Authenticated() {
             <Route path="/*" element={"<ProfileForm />"} />
           )}
         </Routes>
-      </MainContainer>
-    </Container>
+    </>
   );
 }
 export default Authenticated;
