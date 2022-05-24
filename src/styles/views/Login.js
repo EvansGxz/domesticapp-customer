@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { gris } from "../colors";
+import { azul, gris } from "../colors";
 
 export const Title = styled.p`
   text-align: center;
@@ -25,7 +25,6 @@ export const Label = styled.label`
   color: ${gris};
 `;
 
-
 const Error = styled.p`
   color: red;
   padding-left: 1rem;
@@ -33,14 +32,13 @@ const Error = styled.p`
 
 export const StyledInput = styled.input`
   width: 100%;
-
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
-  border: 1px solid grey;
+  border: 1px solid ${gris};
   margin: 0.5rem 0;
 `;
 
-function Input({
+export const Input = ({
   id,
   name,
   type = "text",
@@ -48,9 +46,8 @@ function Input({
   label,
   error,
   ...rest
-}) {
+}) => {
   name ||= id;
-
   return (
     <ContainerInput>
       {label && <Label htmlFor={id}>{label}</Label>}
@@ -64,26 +61,36 @@ function Input({
       {error && <Error size="sm">{error}</Error>}
     </ContainerInput>
   );
-}
-
-export default Input;
-
+};
 
 export const ContainerInputImg = styled.div`
   position: relative;
-  margin: 3rem auto;
+  width: 60%;
+  margin: 2rem auto;
+  height: 20rem;
+`;
+
+export const Img = styled.img`
+  border-radius: 50%;
+  border: 3px solid ${azul};
   width: 100%;
   height: 100%;
 `;
 
- export const InputImg = styled.input`
-  width: 0.1rem;
-  height: 0.1rem;
+export const Round = styled.div`
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background-color: ${azul};
+  height: 5rem;
+  width: 5rem;
+`;
+
+export const InputImg = styled.input`
+  width: 100%;
+  height: 100%;
   opacity: 0;
   overflow: hidden;
-  position: absolute;
-  z-index: -1;
-`;
-export const LabelImg = styled.label`
-  position: absolute;
 `;

@@ -2,15 +2,10 @@ import React, { useState } from "react";
 import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
 import Logo from "../assets/IconLogin.svg";
-import Input, {
-  ContainerInput,
-  Form,
-  Title,
-} from "../styles/views/Login";
+import { ContainerInput, Form, Title, Input } from "../styles/views/Login";
 import { useAuth } from "../context/auth-context";
 
-
-export default function Login(){
+export default function Login() {
   const { login } = useAuth();
   const [form, setForm] = useState({
     email: "",
@@ -58,5 +53,4 @@ export default function Login(){
       </Form>
     </BasicContainer>
   );
-};
-
+}

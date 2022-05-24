@@ -3,6 +3,7 @@ import { GlobalStyle } from "../styles/GlobalStyle";
 
 import Welcome from "../pages/Welcome";
 import Login from "../pages/Login";
+import Signup from "../pages/Signup";
 
 function UnAuthenticated() {
   return (
@@ -14,7 +15,7 @@ function UnAuthenticated() {
         <Route path="/*" element={<Welcome />} />
         <Route path="/welcome" element={<Welcome />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={"<SignupForm />"} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </>
   );
