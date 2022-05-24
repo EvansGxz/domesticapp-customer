@@ -31,9 +31,7 @@ const Error = styled.p`
   padding-left: 1rem;
 `;
 
-const StyledInput = styled.input`
-
-export const Input = styled.input`
+export const StyledInput = styled.input`
   width: 100%;
 
   padding: 1rem 1.5rem;

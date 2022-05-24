@@ -1,5 +1,6 @@
 import React from "react";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import "./styles/normalize.css";
 import { hydrate, render } from "react-dom";
 import { BrowserRouter } from "react-router-dom";
 import { AuthProvider } from "./context/auth-context";
