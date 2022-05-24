@@ -25,13 +25,51 @@ export const Label = styled.label`
   color: ${gris};
 `;
 
+
+const Error = styled.p`
+  color: red;
+  padding-left: 1rem;
+`;
+
+const StyledInput = styled.input`
+
 export const Input = styled.input`
   width: 100%;
+
   padding: 1rem 1.5rem;
   border-radius: 0.5rem;
   border: 1px solid grey;
   margin: 0.5rem 0;
 `;
+
+function Input({
+  id,
+  name,
+  type = "text",
+  placeholder,
+  label,
+  error,
+  ...rest
+}) {
+  name ||= id;
+
+  return (
+    <ContainerInput>
+      {label && <Label htmlFor={id}>{label}</Label>}
+      <StyledInput
+        id={id}
+        name={name}
+        type={type}
+        placeholder={placeholder}
+        {...rest}
+      />
+      {error && <Error size="sm">{error}</Error>}
+    </ContainerInput>
+  );
+}
+
+export default Input;
+
 
 export const ContainerInputImg = styled.div`
   position: relative;
