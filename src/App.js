@@ -19,6 +19,17 @@ function App() {
       </Routes>
     </>
   );
-}
+// =======
 
+// import Authenticated from "./Auth/Authenticated";
+// import { useAuth } from "./context/auth-context";
+// import UnAuthenticated from "./Auth/UnAuthenticated";
+
+// function App() {
+//   const { user } = useAuth();
+//   console.log(user)
+//   return user ? <Authenticated /> : <UnAuthenticated />;
+// >>>>>>> ec76acdc1b94e3f98b2860b4040cfff1a6b12896
+// }
+  }
 export default App;
