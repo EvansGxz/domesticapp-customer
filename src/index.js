@@ -1,5 +1,5 @@
 import React from "react";
-import "./normalize.css";
+import "./styles/normalize.css";
 // import App from './App';
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import { hydrate, render } from "react-dom";
