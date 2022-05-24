@@ -39,7 +39,7 @@ const Welcome = () => {
         Iniciar Sesión
       </ButtonStandard>
       <P>
-        ¿No tienes cuenta? <StyledLink to="/">Registrate</StyledLink>{" "}
+        ¿No tienes cuenta? <StyledLink to="/signup">Registrate</StyledLink>{" "}
       </P>
     </BasicContainer>
   );
