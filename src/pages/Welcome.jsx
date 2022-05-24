@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "../assets/DomAppLogo.svg";
-import { paises } from "../contantes/paises";
+import { paises } from "../constantes/paises";
 import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
 import {
