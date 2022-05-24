@@ -3,7 +3,6 @@ import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
 import Logo from "../assets/IconLogin.svg";
 import Input, {
-  Label,
   ContainerInput,
   Form,
   Title,
