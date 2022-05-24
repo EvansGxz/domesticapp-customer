@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import { useAuth } from "./context/auth-context";
 import { Navigate } from "react-router-dom";
 import ProfileForm from "./components/profile-form";
+import CustomerHome from "./pages/home";
 
 
 const Container = styled.div``;
@@ -19,8 +20,8 @@ function Authenticated() {
         <Routes>
           {user.full_name ? (
             <>
-              <Route path="/*" element={"<HomePage />"} />
-              <Route path="/home" element={"<HomePage />"} />
+              <Route path="/*" element={<CustomerHome />} />
+              <Route path="/home" element={<CustomerHome />} />
               <Route index element={<Navigate to="home" />} />
 
             </>
