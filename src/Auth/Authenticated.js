@@ -13,7 +13,6 @@ function Authenticated() {
   return (
     <>
       <GlobalStyle />
-
       <Routes>
         {user.full_name ? (
           <>

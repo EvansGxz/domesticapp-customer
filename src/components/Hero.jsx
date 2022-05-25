@@ -5,7 +5,7 @@ import { gris } from "../styles/colors";
 
 const Container = styled.div`
   width: 100%;
-  margin: 30% auto 3rem auto;
+  margin: 20% auto 3rem auto;
   position: relative;
   overflow: hidden;
 `;

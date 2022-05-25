@@ -4,7 +4,7 @@ import { blanco, gris } from "../colors";
 export const ContainerHeader = styled.div`
   position: fixed;
   top: 0;
-  height: 15%;
+  height: 13%;
   width: 100%;
   padding: 1rem 2rem;
   display: flex;
