@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Routes, Route } from "react-router-dom";
-
 import { useAuth } from "../context/auth-context";
 import { Navigate } from "react-router-dom";
 import Home from "../pages/Home";
 import Support from "../pages/support/Support";
+import Calendar from "../pages/Calendar";
 import { GlobalStyle } from "../styles/GlobalStyle";
 
 function Authenticated() {
@@ -35,7 +35,7 @@ function Authenticated() {
             <Route path="/addService" element={"<AddService />"} />
             <Route path="/history" element={"<History />"} />
             <Route path="/cupons" element={"<Cupons />"} />
-            <Route path="/calendar" element={"<Calendar />"} />
+            <Route path="/calendar" element={<Calendar />} />
             <Route path="/notifications" element={"<Notifications />"} />
             <Route path="/support" element={<Support />} />
             <Route path="/profile" element={"<Profile />"} />
