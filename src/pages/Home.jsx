@@ -1,28 +1,14 @@
-import { useEffect } from "react";
-import { useAuth } from "../context/auth-context";
 import { BasicContainer } from "../styles/containers";
 import Header from "../components/Header";
+import Hero from "../components/Hero";
+import Profesions from "../components/Profesions";
 
 export default function Home() {
-  const { categories, getCategories } = useAuth();
-
-  useEffect(() => {
-    getCategories();
-  }, []); // eslint-disable-line react-hooks/exhaustive-deps
   return (
     <BasicContainer>
       <Header />
-      {categories ? (
-        <>
-          {categories.map((category) => (
-            <p key={category.id}>{category.category_name} </p>
-          ))}
-        </>
-      ) : (
-        <div>
-          <h2>Categories not found</h2>
-        </div>
-      )}
+      <Hero />
+      <Profesions />
     </BasicContainer>
   );
 }
