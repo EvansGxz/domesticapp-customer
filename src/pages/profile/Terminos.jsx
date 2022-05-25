@@ -1,4 +1,4 @@
-import { termsText1, termsText10, termsText11, termsText12, termsText13, termsText14, termsText15, termsText16, termsText17, termsText18, termsText2, termsText3, termsText31, termsText4, termsText5, termsText6, termsText7, termsText8, termsText8_1, termsText8_2, termsText8_3, termsText8_4, termsText8_5, termsText8_6, termsText8_7, termsText8_8, termsText8_9, termsText9 } from "../../constantes/paragraph";
+import { termsText1, termsText10, termsText11, termsText12, termsText13, termsText14, termsText15, termsText16, termsText17, termsText18, termsText2, termsText3, termsText31, termsText4, termsText5, termsText6, termsText7, termsText8, termsText8_1, termsText8_2, termsText8_3, termsText8_4, termsText8_5, termsText8_6, termsText8_7, termsText8_8, termsText8_9 } from "../../constantes/paragraph";
 
 
 function Terminos(){
