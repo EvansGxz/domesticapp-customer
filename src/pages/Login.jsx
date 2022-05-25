@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
 import Logo from "../assets/IconLogin.svg";
-import { ContainerInput, Form, Title, Input } from "../styles/views/Login";
+import { Form, Title, Input } from "../styles/views/Login";
 import { useAuth } from "../context/auth-context";
 
 export default function Login() {
@@ -27,26 +27,24 @@ export default function Login() {
       <img src={Logo} alt="logo-domesticapp" />
       <Title>Iniciar Sesión</Title>
       <Form onSubmit={handleSubmit}>
-        <ContainerInput>
-          <Input
-            id="email"
-            label="Email"
-            type="email"
-            placeholder="example@mail.com"
-            value={form.email}
-            onChange={handleFormChange}
-          />
-        </ContainerInput>
-        <ContainerInput>
-          <Input
-            id="password"
-            label="Password"
-            type="password"
-            placeholder="******"
-            value={form.password}
-            onChange={handleFormChange}
-          />
-        </ContainerInput>
+        <Input
+          id="email"
+          label="Email"
+          type="email"
+          placeholder="example@mail.com"
+          value={form.email}
+          onChange={handleFormChange}
+        />
+
+        <Input
+          id="password"
+          label="Password"
+          type="password"
+          placeholder="******"
+          value={form.password}
+          onChange={handleFormChange}
+        />
+
         <ButtonStandard type="submit" color="azul">
           Iniciar Sesión
         </ButtonStandard>
