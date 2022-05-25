@@ -13,6 +13,9 @@ import {
   P,
   StyledLink,
 } from "../styles/views/Welcome";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faGoogle, faFacebook } from "@fortawesome/free-brands-svg-icons";
 
 const Welcome = () => {
   const navigate = useNavigate();
@@ -27,9 +30,26 @@ const Welcome = () => {
       </Select>
       <img src={Logo} alt="logo-domesticaApp" />
       <ContainerButtons>
-        <ButtonStandard color="morado">Continúa con Google</ButtonStandard>
-        <ButtonStandard color="verde">Continúa con tu celular</ButtonStandard>
-        <ButtonStandard>Continúa con Facebook</ButtonStandard>
+        <ButtonStandard color="morado">
+          {" "}
+          <FontAwesomeIcon
+            icon={faGoogle}
+            style={{ marginRight: "10px" }}
+          />{" "}
+          Continúa con Google
+        </ButtonStandard>
+        <ButtonStandard color="verde">
+          {" "}
+          <FontAwesomeIcon
+            icon={faPhone}
+            style={{ marginRight: "10px" }}
+          />{" "}
+          Continúa con tu celular
+        </ButtonStandard>
+        <ButtonStandard>
+          <FontAwesomeIcon icon={faFacebook} style={{ marginRight: "10px" }} />{" "}
+          Continúa con Facebook
+        </ButtonStandard>
       </ContainerButtons>
       <Center>
         <Line></Line>
