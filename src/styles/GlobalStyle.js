@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import { blanco } from "./colors";
 
 export const GlobalStyle = createGlobalStyle`
     html{
@@ -8,6 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     body{
         font-size: 16px;
         font-family: 'Poppins', sans-serif;
+        background-color: ${blanco};
     }
     *,*::before,*::after{
         box-sizing: inherit;
