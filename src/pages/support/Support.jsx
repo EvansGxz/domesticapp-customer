@@ -1,20 +1,37 @@
-import supportText from "../../constantes/paragraph"
+import { supportText } from "../../constantes/paragraph";
+import { IconsAyuda } from "../../constantes/centroAyuda";
+import HeaderViews from "../../components/HeaderViews";
+import Footer from "../../components/Footer";
+import { BasicContainer } from "../../styles/containers";
+import {
+  SupportContainer,
+  Title,
+  NewLink,
+  Info,
+  ContainerIcon,
+} from "../../styles/views/Support";
 
-function Support(){
-return(
-  <>
-    <p>{supportText}</p>
-    <h2>Temas de Ayuda</h2>
-    <p>Chat de Soporte</p>
-    <p>Necesitas ayuda con tu último servicio?</p>
-    <p>Tienes alguna duda?</p>
-    <p>Notificaciones</p>
-    <p>Daño en el Servicio o Accidentes Laborales</p>
-  </>
-
-  )
-  
-
-}
+const Support = () => {
+  return (
+    <BasicContainer>
+      <HeaderViews title="Centro de Ayuda" />
+      <SupportContainer>
+        <p>{supportText}</p>
+        <Title>Temas de Ayuda</Title>
+        <div>
+          {IconsAyuda.map((iconAyuda) => (
+            <NewLink key={iconAyuda.id} to={iconAyuda.ruta}>
+              <ContainerIcon>
+                <img src={iconAyuda.img} alt={iconAyuda.nombre} />
+                <Info>{iconAyuda.nombre}</Info>
+              </ContainerIcon>
+            </NewLink>
+          ))}
+        </div>
+      </SupportContainer>
+      <Footer />
+    </BasicContainer>
+  );
+};
 
 export default Support;
