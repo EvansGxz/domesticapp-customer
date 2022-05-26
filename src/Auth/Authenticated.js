@@ -36,6 +36,7 @@ function Authenticated() {
             <Route path="/select_service3" element={<ServiceStep3 />} />
             <Route path="/select_service4" element={<ServiceStep4 />} />
             <Route path="/calendar" element={<Calendar />} />
+            <Route path="/support" element={<Support />} />
             <Route path="/faq" element={<Faq />} />
             <Route path="/process_payment" element={"<Payment />"} />
             <Route path="/services" element={"<ServicePage />"} />
@@ -43,7 +44,6 @@ function Authenticated() {
             <Route path="/history" element={"<History />"} />
             <Route path="/cupons" element={"<Cupons />"} />
             <Route path="/notifications" element={"<Notifications />"} />
-            <Route path="/support" element={<Support />} />
             <Route path="/profile" element={"<Profile />"} />
             <Route path="/profile_employee" element={"<ProfileEmployee />"} />
           </>
