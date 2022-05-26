@@ -28,10 +28,10 @@ export const Center = styled.div`
 export const Or = styled.div`
   font-weight: bold;
   z-index: 100;
-  background-color: ${azul};
+  background-color: ${({ bg }) => (bg === "blanco" ? blanco : azul)};
   border: 2px solid ${azul};
   border-radius: 50%;
-  padding: 1rem; ;
+  padding: 1rem;
 `;
 
 export const Line = styled.div`

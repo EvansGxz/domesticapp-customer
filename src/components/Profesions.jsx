@@ -2,21 +2,12 @@
 // import { useAuth } from "../context/auth-context";
 import { Oficios } from "../constantes/oficios";
 import { ButtonStandard } from "../styles/buttons";
-import styled from "styled-components";
-
-const Container = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  margin-bottom: 1.5rem;
-`;
-const ContainerImg = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-`;
+import {
+  Container,
+  NewLink,
+  Title,
+  ContainerImg,
+} from "../styles/views/Profesions";
 
 const Profesions = () => {
   // const { categories, getCategories } = useAuth();
@@ -28,8 +19,10 @@ const Profesions = () => {
       <Container>
         {Oficios.map((oficio) => (
           <ContainerImg key={oficio.id}>
-            <img src={oficio.img} alt={oficio.nombre} />
-            <p>{oficio.nombre}</p>
+            <NewLink to={`/select_service/${oficio.id}`}>
+              <img src={oficio.img} alt={oficio.nombre} />
+              <Title>{oficio.nombre}</Title>
+            </NewLink>
           </ContainerImg>
         ))}
         {/* Codigo de iteracion */}
@@ -45,7 +38,9 @@ const Profesions = () => {
         </div>
       )} */}
       </Container>
-      <ButtonStandard color="azul">Conoce al Equipo</ButtonStandard>
+      <ButtonStandard color="azul" marginB="7">
+        Conoce al Equipo
+      </ButtonStandard>
     </>
   );
 };
