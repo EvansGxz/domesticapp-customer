@@ -8,6 +8,7 @@ import Calendar from "../pages/Calendar";
 import ServiceStep1 from "../pages/ServiceStep1";
 import ServiceStep2 from "../pages/ServiceStep2";
 import ServiceStep3 from "../pages/ServiceStep3";
+import ServiceStep4 from "../pages/ServiceStep4";
 import { GlobalStyle } from "../styles/GlobalStyle";
 
 function Authenticated() {
@@ -32,7 +33,7 @@ function Authenticated() {
             <Route path="/select_service/:id" element={<ServiceStep1 />} />
             <Route path="/select_service2" element={<ServiceStep2 />} />
             <Route path="/select_service3" element={<ServiceStep3 />} />
-            <Route path="/select_service4" element={"<ServiceStep4 />"} />
+            <Route path="/select_service4" element={<ServiceStep4 />} />
             <Route path="/process_payment" element={"<Payment />"} />
             <Route path="/services" element={"<ServicePage />"} />
             <Route path="/addService" element={"<AddService />"} />

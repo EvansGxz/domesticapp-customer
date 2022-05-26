@@ -31,4 +31,5 @@ export const StyleInput = styled.input`
 export const P = styled.p`
   font-size: 2rem;
   font-weight: 500;
+  color: ${({ color }) => (color === "gris" ? gris : "black")}; ;
 `;

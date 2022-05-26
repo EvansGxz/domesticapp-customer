@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Repetir from "../components/Repetir";
 import HeaderViews from "../components/HeaderViews";
 import Footer from "../components/Footer";
@@ -7,6 +8,7 @@ import { ButtonStandard } from "../styles/buttons";
 import { ContainerInput, P, StyleSelect } from "../styles/views/StepServices";
 
 const ServiceStep3 = () => {
+  const navigate = useNavigate();
   const [repetir, setRepetir] = useState("");
 
   return (
@@ -21,7 +23,11 @@ const ServiceStep3 = () => {
         </StyleSelect>
       </ContainerInput>
       {repetir === "si" ? <Repetir /> : null}
-      <ButtonStandard color="azul" marginT="4">
+      <ButtonStandard
+        color="azul"
+        marginT="4"
+        onClick={() => navigate("/select_service4")}
+      >
         Continuar
       </ButtonStandard>
       <Footer />
