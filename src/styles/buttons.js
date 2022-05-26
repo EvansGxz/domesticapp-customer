@@ -17,6 +17,8 @@ export const ButtonStandard = styled.button`
       : azulFace};
   border: none;
   color: white;
-  margin: ${({ margin }) =>
-    margin ? `${margin}rem auto` : "0 auto 1.5rem auto"};
+  margin-top: ${({ marginT }) => (marginT ? `${marginT}rem` : 0)};
+  margin-bottom: ${({ marginB }) => (marginB ? `${marginB}rem` : "1.5rem")};
+  margin-left: auto;
+  margin-right: auto;
 `;

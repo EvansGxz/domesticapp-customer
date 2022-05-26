@@ -9,10 +9,12 @@ const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0 0 2rem 0;
 `;
 const Title = styled.p`
   text-align: center;
   font-weight: bold;
+  margin: 0 0 1rem 0;
 `;
 
 const CalendarPicker = () => {

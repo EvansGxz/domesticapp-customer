@@ -38,7 +38,7 @@ const Profesions = () => {
         </div>
       )} */}
       </Container>
-      <ButtonStandard color="azul" margin="7">
+      <ButtonStandard color="azul" marginB="7">
         Conoce al Equipo
       </ButtonStandard>
     </>

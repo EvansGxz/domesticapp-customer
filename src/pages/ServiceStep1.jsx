@@ -1,44 +1,25 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import HeaderViews from "../components/HeaderViews";
 import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
 import { Line, Or, Center } from "../styles/views/Welcome";
+import { ContainerInput, P, StyleSelect } from "../styles/views/StepServices";
 import Footer from "../components/Footer";
-import styled from "styled-components";
-
-const ContainerSelect = styled.div`
-  width: 100%;
-  margin-bottom: 7rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-const Select = styled.select`
-  border: 1px solid gray;
-  padding: 1.5rem 2rem;
-  background-color: transparent;
-  border-radius: 0.5rem;
-  color: grey;
-  margin: 1rem 0;
-`;
-const P = styled.p`
-  font-size: 2rem;
-  font-weight: 500;
-`;
 
 const ServiceStep1 = () => {
+  const navigate = useNavigate();
   return (
     <BasicContainer>
       <HeaderViews title="elige tu servicio" />
-      <ContainerSelect>
+      <ContainerInput margin="5">
         <P>Tipo de jornada</P>
-        <Select>
+        <StyleSelect>
           <option value="">Elige tipo de jornada</option>
           <option value="completa">Jornada Completa</option>
           <option value="media">Media Jornada</option>
-        </Select>
-      </ContainerSelect>
+        </StyleSelect>
+      </ContainerInput>
 
       <ButtonStandard margin="1" color="azul">
         Seleccionar Empleado
@@ -47,7 +28,11 @@ const ServiceStep1 = () => {
         <Line></Line>
         <Or bg="blanco">OR</Or>
       </Center>
-      <ButtonStandard margin="1" color="azul">
+      <ButtonStandard
+        marginT="2"
+        color="azul"
+        onClick={() => navigate("/select_service2")}
+      >
         Continuar
       </ButtonStandard>
       <Footer />
