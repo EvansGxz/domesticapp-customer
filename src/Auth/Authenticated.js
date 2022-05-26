@@ -4,6 +4,7 @@ import { useAuth } from "../context/auth-context";
 import { Navigate } from "react-router-dom";
 import Home from "../pages/Home";
 import Support from "../pages/support/Support";
+import Faq from "../pages/support/Faq";
 import Calendar from "../pages/Calendar";
 import ServiceStep1 from "../pages/ServiceStep1";
 import ServiceStep2 from "../pages/ServiceStep2";
@@ -34,14 +35,15 @@ function Authenticated() {
             <Route path="/select_service2" element={<ServiceStep2 />} />
             <Route path="/select_service3" element={<ServiceStep3 />} />
             <Route path="/select_service4" element={<ServiceStep4 />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/support" element={<Support />} />
+            <Route path="/faq" element={<Faq />} />
             <Route path="/process_payment" element={"<Payment />"} />
             <Route path="/services" element={"<ServicePage />"} />
             <Route path="/addService" element={"<AddService />"} />
             <Route path="/history" element={"<History />"} />
             <Route path="/cupons" element={"<Cupons />"} />
-            <Route path="/calendar" element={<Calendar />} />
             <Route path="/notifications" element={"<Notifications />"} />
-            <Route path="/support" element={<Support />} />
             <Route path="/profile" element={"<Profile />"} />
             <Route path="/profile_employee" element={"<ProfileEmployee />"} />
           </>
