@@ -1,9 +1,18 @@
-import { AutCal, AutEje, AutGar1, AutGar2, AutLey, AutMed, AutMen, AutMod1, AutMod2 } from "../../constantes/paragraph";
+import {
+  AutCal,
+  AutEje,
+  AutGar1,
+  AutGar2,
+  AutLey,
+  AutMed,
+  AutMen,
+  AutMod1,
+  AutMod2,
+} from "../../constantes/paragraph";
 
-function Politicas(){
-  return(
+function Politicas() {
+  return (
     <>
-      
       <p>GARANTÍA Y PROTECCIÓN DE DATOS</p>
       <div>
         <p>{AutGar1}</p>
@@ -14,8 +23,10 @@ function Politicas(){
       <div>
         <p>{AutCal}</p>
       </div>
-      <p>EJERCICIO DE LOS DERECHOS DE ACCESO, RECTIFICACIÓN,
-      CANCELACIÓN Y OPOSICIÓN</p>
+      <p>
+        EJERCICIO DE LOS DERECHOS DE ACCESO, RECTIFICACIÓN, CANCELACIÓN Y
+        OPOSICIÓN
+      </p>
       <div>
         <p>{AutEje}</p>
       </div>
@@ -28,7 +39,7 @@ function Politicas(){
         <p>{AutMod1}</p>
       </div>
       <h1>VARIOS</h1>
-  
+
       <p>MODIFICACIONES</p>
       <div>
         <p>{AutMod2}</p>
@@ -42,7 +53,7 @@ function Politicas(){
         <p>{AutLey}</p>
       </div>
     </>
-    )
-  }
-  
-  export default Politicas;
+  );
+}
+
+export default Politicas;

@@ -21,7 +21,7 @@ export default function ProfileForm() {
         document_type: user.document_type,
         document_string: user.document_string,
         full_name: user.full_name,
-        cc_nit: user.cc_nit
+        cc_nit: user.cc_nit,
       });
     });
   }, []);
@@ -37,7 +37,7 @@ export default function ProfileForm() {
     document_type: "",
     document_string: "",
     full_name: "",
-    cc_nit: ""
+    cc_nit: "",
   });
 
   function handleSubmit(event) {
@@ -162,9 +162,7 @@ export default function ProfileForm() {
             error={errors.cc_nit}
           />
 
-          <ButtonStandard color="azul">
-            Update
-          </ButtonStandard>
+          <ButtonStandard color="azul">Update</ButtonStandard>
         </Form>
       ) : (
         <div>Cargando....</div>

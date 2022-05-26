@@ -5,6 +5,7 @@ import { Navigate } from "react-router-dom";
 import Home from "../pages/Home";
 import Support from "../pages/support/Support";
 import Calendar from "../pages/Calendar";
+import ServiceStep1 from "../pages/ServiceStep1";
 import { GlobalStyle } from "../styles/GlobalStyle";
 
 function Authenticated() {
@@ -26,7 +27,7 @@ function Authenticated() {
               path="/employee_services"
               element={"<EmployeeServicePage />"}
             />
-            <Route path="/select_service" element={"<ServiceStep1 />"} />
+            <Route path="/select_service/:id" element={<ServiceStep1 />} />
             <Route path="/select_service2" element={"<ServiceStep2 />"} />
             <Route path="/select_service3" element={"<ServiceStep3 />"} />
             <Route path="/select_service4" element={"<ServiceStep4 />"} />
