@@ -18,6 +18,6 @@ export const IconsAyuda = [
     id: 5,
     nombre: "Daño en el Servicio o Accidentes Laborales",
     img: daño,
-    ruta: "accidentes",
+    ruta: "/accidentes",
   },
 ];
