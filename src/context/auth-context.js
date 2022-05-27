@@ -11,22 +11,24 @@ const AuthContext = createContext();
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
-  const {  data, execute } = useAsync();
-  
+  const { data, execute } = useAsync();
 
   useEffect(() => {
-    if(sessionStorage.getItem(tokenKey)!==null){
+    if (sessionStorage.getItem(tokenKey) !== null) {
       getUser()
-      .then(setUser)
-      .catch((error) => console.log(error));
+        .then(setUser)
+        .catch((error) => console.log(error));
     }
-
   }, []);
 
   function handleLogin(credentials) {
     return login(credentials).then((user) => {
       setUser(user);
-      navigate("/home");
+      if (user.new) {
+        navigate("/introduction");
+      } else {
+        navigate("/home");
+      }
     });
   }
 
@@ -51,13 +53,12 @@ function AuthProvider({ children }) {
     });
   }
 
-// ========================= Category ===============
+  // ========================= Category ===============
   function handleIndexCategory() {
     return execute(indexCategories());
   }
 
-// ========================= Services =============
-
+  // ========================= Services =============
 
   return (
     <AuthContext.Provider

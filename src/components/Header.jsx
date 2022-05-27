@@ -14,7 +14,10 @@ const Header = () => {
   const { user } = useAuth();
   return (
     <ContainerHeader>
-      <Img src={user?.cover ? user?.cover : Avatar} alt={user?.full_name} />
+      <Img
+        src={user?.image_url ? user?.image_url : Avatar}
+        alt={user?.full_name}
+      />
       <UserData>
         <Title>
           Hola <UserName>{user?.full_name}</UserName>!

@@ -12,6 +12,9 @@ import ServiceStep3 from "../pages/ServiceStep3";
 import ServiceStep4 from "../pages/ServiceStep4";
 import Preguntas from "../pages/support/Preguntas";
 import Accidentes from "../pages/support/Accidentes";
+import Profile from "../pages/profile/Profile";
+import Notificaciones from '../pages/support/Notificaciones'
+import Slider from '../pages/Slider'
 import { GlobalStyle } from "../styles/GlobalStyle";
 
 function Authenticated() {
@@ -23,12 +26,13 @@ function Authenticated() {
       <Routes>
         {user.full_name ? (
           <>
+             <Route path="//introduction" element={<Slider />} />
             <Route path="/*" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route index element={<Navigate to="home" />} />
 
             <Route path="/verification" element={<h2>Verify</h2>} />
-            <Route path="/introduction" element={<h2> Introduction</h2>} />
+           
             <Route
               path="/employee_services"
               element={"<EmployeeServicePage />"}
@@ -42,13 +46,13 @@ function Authenticated() {
             <Route path="/faq" element={<Faq />} />
             <Route path="/preguntas/:id" element={<Preguntas />} />
             <Route path="/accidentes" element={<Accidentes />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/notifications" element={<Notificaciones />} />
             <Route path="/process_payment" element={"<Payment />"} />
             <Route path="/services" element={"<ServicePage />"} />
             <Route path="/addService" element={"<AddService />"} />
             <Route path="/history" element={"<History />"} />
             <Route path="/cupons" element={"<Cupons />"} />
-            <Route path="/notifications" element={"<Notifications />"} />
-            <Route path="/profile" element={"<Profile />"} />
             <Route path="/profile_employee" element={"<ProfileEmployee />"} />
           </>
         ) : (
