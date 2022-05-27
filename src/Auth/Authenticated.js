@@ -16,6 +16,8 @@ import Profile from "../pages/profile/Profile";
 import Notificaciones from '../pages/support/Notificaciones'
 import Slider from '../pages/Slider'
 import { GlobalStyle } from "../styles/GlobalStyle";
+import Direcciones from "../pages/profile/Direcciones";
+import ProfileForm from "../pages/profile/Editar";
 
 function Authenticated() {
   const { user } = useAuth();
@@ -53,7 +55,8 @@ function Authenticated() {
             <Route path="/addService" element={"<AddService />"} />
             <Route path="/history" element={"<History />"} />
             <Route path="/cupons" element={"<Cupons />"} />
-            <Route path="/profile_employee" element={"<ProfileEmployee />"} />
+            <Route path="/profile_employee" element={<ProfileForm />} />
+            <Route path="/address" element={<Direcciones />} />
           </>
         ) : (
           <Route path="/*" element={"<ProfileForm />"} />

@@ -45,6 +45,7 @@ export const Input = ({
   placeholder,
   label,
   error,
+  innerRef,
   ...rest
 }) => {
   name ||= id;
@@ -55,6 +56,7 @@ export const Input = ({
         id={id}
         name={name}
         type={type}
+        ref={innerRef}
         placeholder={placeholder}
         {...rest}
       />

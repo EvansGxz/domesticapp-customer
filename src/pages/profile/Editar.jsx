@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { ButtonStandard } from "../../styles/buttons";
-import Input, { Form } from "../../styles/views/Login";
-import { useAuth } from "../context/auth-context";
-import { getUser } from "../services/users-service";
+import { Input, Form } from "../../styles/views/Login";
+import { useAuth } from "../../context/auth-context";
+import { getUser } from "../../services/users-service";
 
 export default function ProfileForm() {
   const { update } = useAuth();
