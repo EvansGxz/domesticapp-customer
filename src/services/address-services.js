@@ -7,3 +7,8 @@ export async function indexAddress() {
 export async function showAddress(AddressID) {
   return await apiFetch(`address/${AddressID}`);
 }
+
+export async function createAddress(newAddress) {
+  return await apiFetch('address/', { body: newAddress });
+   
+}
