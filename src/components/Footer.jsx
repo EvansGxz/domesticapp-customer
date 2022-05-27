@@ -37,7 +37,7 @@ const Footer = () => {
       <Link to="/support">
         <img src={support} alt="support" />
       </Link>
-      <Link to="/contract">
+      <Link to="/profile">
         <img src={contract} alt="contract" />
       </Link>
     </ContainerFooter>
