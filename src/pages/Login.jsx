@@ -11,17 +11,17 @@ export default function Login() {
     email: "",
     password: "",
   });
+  function handleFormChange(event) {
+    const { name, value } = event.target;
+
+    setForm({ ...form, [name]: value });
+  }
 
   function handleSubmit(event) {
     event.preventDefault();
     login(form);
   }
 
-  function handleFormChange(event) {
-    const { name, value } = event.target;
-
-    setForm({ ...form, [name]: value });
-  }
   return (
     <BasicContainer>
       <img src={Logo} alt="logo-domesticapp" />

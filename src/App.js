@@ -5,7 +5,6 @@ import UnAuthenticated from "./Auth/UnAuthenticated";
  function App() {
    const { user } = useAuth();
    return user ? <Authenticated /> : <UnAuthenticated />;
-
  }
 
 export default App;

@@ -13,7 +13,7 @@ export const IconsAyuda = [
     ruta: "/",
   },
   { id: 3, nombre: "¿Tienes alguna duda?", img: duda, ruta: "/faq" },
-  { id: 4, nombre: "Notificaciones", img: notificacion, ruta: "/notificacion" },
+  { id: 4, nombre: "Notificaciones", img: notificacion, ruta: "/notifications" },
   {
     id: 5,
     nombre: "Daño en el Servicio o Accidentes Laborales",

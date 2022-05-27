@@ -7,6 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const Slider = () => {
+  
   return (
     <>
       <Swiper
