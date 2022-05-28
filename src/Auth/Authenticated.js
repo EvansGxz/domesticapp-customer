@@ -20,6 +20,7 @@ import Direcciones from "../pages/profile/Direcciones";
 import ProfileForm from "../pages/profile/Editar";
 import Cupons from "../pages/profile/Cupons";
 import History from "../pages/profile/History";
+import ProfileEmployee from "../pages/Empleado";
 
 function Authenticated() {
   const { user } = useAuth();
@@ -38,8 +39,8 @@ function Authenticated() {
             <Route path="/verification" element={<h2>Verify</h2>} />
            
             <Route
-              path="/employee_services"
-              element={"<EmployeeServicePage />"}
+              path="/employee_profile"
+              element={<ProfileEmployee />}
             />
             <Route path="/select_service/:id" element={<ServiceStep1 />} />
             <Route path="/select_service2" element={<ServiceStep2 />} />
