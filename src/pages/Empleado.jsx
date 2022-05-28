@@ -1,9 +1,19 @@
-export default function ProfileCustomer(){
-    return(
+import { useEffect, useState } from "react";
+import { showEmployee } from "../services/users-service";
+
+export default function ProfileEmployee(){
+  
+  const [profile, setProfile] = useState(null);
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get("id");
+    showEmployee(id).then(setProfile);
+  }, []);
+
+  return profile ? (
         <>
           <div id="EMPLEADA">
-            <p>FOTO</p>
-            <p>NOMBRE</p>
+            <img alt="employee" src={profile.image_url}/>
+            <p>NOMBRE: {profile.full_name}</p>
           </div>
 
             <div id="DATOS PERSONALES">
@@ -23,6 +33,6 @@ export default function ProfileCustomer(){
               <p>RESEÑAS: </p>
             </div>
         </>
-    );
+    ) : (<div>no hay datos aún</div>);
 
 };

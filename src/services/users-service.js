@@ -26,3 +26,7 @@ export async function deleteUser() {
   await apiFetch("users", { method: "DELETE" });
   sessionStorage.removeItem(tokenKey);
 }
+
+export async function showEmployee(CategoryID) {
+  return await apiFetch(`employee/${CategoryID}`);
+}
