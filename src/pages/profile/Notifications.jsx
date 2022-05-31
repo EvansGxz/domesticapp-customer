@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { ContactUs } from "../../components/Emails";
 import { useAuth } from "../../context/auth-context";
 import { showNotification } from "../../services/notifications-service";
 
@@ -22,6 +23,7 @@ export default function Notification() {
                 <li>{not.name}</li>
                 <li>{not.body}</li>
               </ul> 
+              <ContactUs />
             </>
           );
         })
