@@ -21,6 +21,7 @@ import ProfileForm from "../pages/profile/Editar";
 import Cupons from "../pages/profile/Cupons";
 import History from "../pages/profile/History";
 import ProfileEmployee from "../pages/Empleado";
+import Notification from "../pages/profile/Notifications";
 
 function Authenticated() {
   const { user } = useAuth();
@@ -59,6 +60,7 @@ function Authenticated() {
             <Route path="/cupons" element={<Cupons />} />
             <Route path="/profile_employee" element={<ProfileForm />} />
             <Route path="/address" element={<Direcciones />} />
+            <Route path="/notification" element={<Notification />} />
           </>
         ) : (
           <Route path="/*" element={"<ProfileForm />"} />
