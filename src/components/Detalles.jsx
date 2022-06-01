@@ -1,6 +1,8 @@
 import React from "react";
 import { Form, Input } from "../styles/views/Login";
 import { ContainerInput, P, StyleSelect } from "../styles/views/StepServices";
+import GoogleMapp from "./google-map";
+
 
 const Detalles = () => {
   return (
@@ -34,7 +36,9 @@ const Detalles = () => {
           <option value="NIT">NIT</option>
         </StyleSelect>
       </ContainerInput>
+      
     </Form>
+      
   );
 };
 
