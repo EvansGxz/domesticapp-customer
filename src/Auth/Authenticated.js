@@ -25,14 +25,13 @@ import Notification from "../pages/profile/Notifications";
 
 function Authenticated() {
   const { user } = useAuth();
-  console.log(user);
   return (
     <>
       <GlobalStyle />
       <Routes>
         {user.full_name ? (
           <>
-             <Route path="//introduction" element={<Slider />} />
+            <Route path="//introduction" element={<Slider />} />
             <Route path="/*" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route index element={<Navigate to="home" />} />
@@ -43,7 +42,7 @@ function Authenticated() {
               path="/employee_profile"
               element={<ProfileEmployee />}
             />
-            <Route path="/select_service/:id" element={<ServiceStep1 />} />
+            <Route path="/select_service" element={<ServiceStep1 />} />
             <Route path="/select_service2" element={<ServiceStep2 />} />
             <Route path="/select_service3" element={<ServiceStep3 />} />
             <Route path="/select_service4" element={<ServiceStep4 />} />
