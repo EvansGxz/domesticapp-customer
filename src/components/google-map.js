@@ -29,7 +29,6 @@ function GoogleMapp() {
   useEffect(() => {
     showEmploye().then(setEmployee);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
-  const [map, setMap] = useState(/** @type google.maps.Map */ (null))
   const [directionsResponse, setDirectionsResponse] = useState(null)
   /** @type React.MutableRefObject<HTMLInputElement> */
   const originRef = useRef()
@@ -73,7 +72,7 @@ function GoogleMapp() {
             mapTypeControl: false,
             fullscreenControl: false,
           }}
-          onLoad={map => setMap(map)}
+          
         >
         <Marker position={center} />
           {directionsResponse && (

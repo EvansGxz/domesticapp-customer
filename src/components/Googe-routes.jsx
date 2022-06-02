@@ -20,7 +20,7 @@ export default async function CalculateRoute(origen, employees) {
   });
 
   
-  employees.map((m) => {
+  employees.forEach((m) => {
     if (m.employee.region === x[0].Address){
       a = m
     }
