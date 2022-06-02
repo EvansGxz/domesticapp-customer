@@ -19,7 +19,7 @@ const ServiceStep4 = () => {
     const calendar =  cart[2];
     const CategoryID =  cart[0];
     const jornada =  cart[1];
-    const alimento =  cart[5];
+    const alimento =  cart[6];
     const employee = cart[5];
    
     const getOrder = { category_id: CategoryID, employee_id: employee, customer_id: user.id, workday: jornada,

@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HeaderViews from "../components/HeaderViews";
 import { BasicContainer } from "../styles/containers";
