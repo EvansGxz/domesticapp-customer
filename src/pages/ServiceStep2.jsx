@@ -1,26 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HeaderViews from "../components/HeaderViews";
-import CalendarPicker from "../components/CalendarPicker";
 import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
 import Footer from "../components/Footer";
-import { ContainerInput, P, StyleInput } from "../styles/views/StepServices";
+import CalendarPick, { fecha } from "../components/Calendar";
+import { cart } from "./ServiceStep1";
+
 
 const ServiceStep2 = () => {
   const navigate = useNavigate();
+  //const [value, onChange] = useState('10:00');
+  cart.splice(2, 1);
+  function setDate(){
+    cart.push(fecha)
+    navigate("/select_service3")
+  }
+
   return (
     <BasicContainer>
       <HeaderViews title="apuntalo en mi agenda" />
-      <CalendarPicker />
-      <ContainerInput>
-        <P>Hora de inicio</P>
-        <StyleInput type="time" />
-      </ContainerInput>
+      <CalendarPick />
       <ButtonStandard
         color="azul"
         marginB="5"
-        onClick={() => navigate("/select_service3")}
+        onClick={() => setDate()}
       >
         Continuar
       </ButtonStandard>

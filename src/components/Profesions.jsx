@@ -19,7 +19,7 @@ const Profesions = () => {
       <Container>
         {Oficios.map((oficio) => (
           <ContainerImg key={oficio.id}>
-            <NewLink to={`/select_service/${oficio.id}`}>
+            <NewLink to={`/select_service/?id=${oficio.id}`}>
               <img src={oficio.img} alt={oficio.nombre} />
               <Title>{oficio.nombre}</Title>
             </NewLink>

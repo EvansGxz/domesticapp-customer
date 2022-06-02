@@ -6,11 +6,17 @@ import Footer from "../components/Footer";
 import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
 import { ContainerInput, P, StyleSelect } from "../styles/views/StepServices";
+import { cart } from "./ServiceStep1";
 
 const ServiceStep3 = () => {
   const navigate = useNavigate();
   const [repetir, setRepetir] = useState("");
 
+  cart.splice(3, 1);
+  function rep(){
+    cart.push(repetir)
+    navigate("/select_service4")
+  }
   return (
     <BasicContainer>
       <HeaderViews title="recurrencia" />
@@ -26,7 +32,7 @@ const ServiceStep3 = () => {
       <ButtonStandard
         color="azul"
         marginT="4"
-        onClick={() => navigate("/select_service4")}
+        onClick={() => rep()}
       >
         Continuar
       </ButtonStandard>

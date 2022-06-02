@@ -14,6 +14,7 @@ import {
   DirectionsRenderer,
 } from '@react-google-maps/api';
 import { useEffect, useRef, useState } from 'react';
+import { cart } from '../pages/ServiceStep1';
 import { showEmploye } from '../services/users-service';
 import { ButtonStandard } from '../styles/buttons';
 import CalculateRoute from './Googe-routes';
@@ -36,7 +37,7 @@ function GoogleMapp() {
   if (!isLoaded) {
     return <div />
   }
-
+  cart.splice(4, 1);
   async function clearRoute() {
     if (originRef.current.value === '') {
       return
@@ -50,6 +51,7 @@ function GoogleMapp() {
       travelMode: google.maps.TravelMode.DRIVING,
     })
     setDirectionsResponse(results)
+    cart.push(originRef.current.value)
     CalculateRoute(originRef.current.value, employee)
   }
 
