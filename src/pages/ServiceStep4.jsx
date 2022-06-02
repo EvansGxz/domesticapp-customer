@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 import Detalles from "../components/Detalles";
 import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
-import GoogleMapp, { direccion } from "../components/google-map";
+import GoogleMapp from "../components/google-map";
 import { a } from "../components/Googe-routes";
 import { cart } from "./ServiceStep1";
 import { useAuth } from "../context/auth-context";
