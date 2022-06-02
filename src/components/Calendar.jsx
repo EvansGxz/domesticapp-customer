@@ -6,8 +6,8 @@ function CalendarPick() {
   const [value, onChange] = useState(new Date());
   
 
- fecha = value;
-  console.log(fecha);
+  fecha = value;
+
   return (
     <div>
       <DateTimePicker onChange={onChange} value={value} />

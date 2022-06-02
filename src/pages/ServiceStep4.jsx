@@ -1,7 +1,7 @@
 import React from "react";
 import HeaderViews from "../components/HeaderViews";
 import Footer from "../components/Footer";
-import Detalles from "../components/Detalles";
+import Detalles, { Alimento } from "../components/Detalles";
 import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
 import GoogleMapp from "../components/google-map";
@@ -15,6 +15,7 @@ const ServiceStep4 = () => {
   cart.splice(5, 1);
   function pay(){
     cart.push(a.employee.id)
+    cart.push(Alimento)
     const address =  cart[4];
     const calendar =  cart[2];
     const CategoryID =  cart[0];
