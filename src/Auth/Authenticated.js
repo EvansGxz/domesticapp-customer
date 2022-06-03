@@ -22,6 +22,8 @@ import Cupons from "../pages/profile/Cupons";
 import History from "../pages/profile/History";
 import ProfileEmployee from "../pages/Empleado";
 import Notification from "../pages/profile/Notifications";
+import Payment from "../pages/Payment";
+import Process from "../pages/Processed";
 
 function Authenticated() {
   const { user } = useAuth();
@@ -53,13 +55,14 @@ function Authenticated() {
             <Route path="/accidentes" element={<Accidentes />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/notifications" element={<Notificaciones />} />
-            <Route path="/process_payment" element={"<Payment />"} />
+            <Route path="/process_payment" element={<Process />} />
             <Route path="/services" element={"<ServicePage />"} />
             <Route path="/history" element={<History />} />
             <Route path="/cupons" element={<Cupons />} />
             <Route path="/profile_employee" element={<ProfileForm />} />
             <Route path="/address" element={<Direcciones />} />
             <Route path="/notification" element={<Notification />} />
+            <Route path="/payment" element={<Payment />} />
           </>
         ) : (
           <Route path="/*" element={"<ProfileForm />"} />

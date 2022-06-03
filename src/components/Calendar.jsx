@@ -7,10 +7,10 @@ function CalendarPick() {
   
 
   fecha = value;
-
+  const date = [new Date(2022, 6, 1), new Date(2022, 6, 5), new Date(2022, 6, 3)]
   return (
     <div>
-      <DateTimePicker onChange={onChange} value={value} />
+      <DateTimePicker onChange={onChange} value={date} />
     </div>
   );
 }

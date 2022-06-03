@@ -5,6 +5,7 @@ import { ButtonStandard } from "../styles/buttons";
 import Footer from "../components/Footer";
 import CalendarPick, { fecha } from "../components/Calendar";
 import { cart } from "./ServiceStep1";
+import CalendarPicker from "../components/CalendarPicker";
 
 
 const ServiceStep2 = () => {
@@ -19,7 +20,7 @@ const ServiceStep2 = () => {
   return (
     <BasicContainer>
       <HeaderViews title="apuntalo en mi agenda" />
-      <CalendarPick />
+      <CalendarPicker />
       <ButtonStandard
         color="azul"
         marginB="5"

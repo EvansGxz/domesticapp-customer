@@ -81,7 +81,6 @@ const Detalles = () => {
         </StyleSelect>
       </ContainerInput>
       {repetir === "si" ? <Labores /> : null}
-      
     </Form>
       
   );

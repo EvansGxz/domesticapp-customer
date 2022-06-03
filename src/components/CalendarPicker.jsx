@@ -30,12 +30,14 @@ const CalendarPicker = () => {
         second: number,
       })
     )
+    
   );
+  const date = [new Date(2022, 6, 1), new Date(2022, 6, 5), new Date(2022, 6, 3)]
   return (
     <Container>
       <Title>Seleccionar fecha en el calendario:</Title>
       <DatePicker
-        value={values}
+        value={date}
         onChange={setValues}
         format="MM/DD/YYYY HH:mm:ss"
         multiple
