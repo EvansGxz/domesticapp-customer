@@ -6,12 +6,15 @@ import { ButtonStandard } from "../styles/buttons";
 import { Line, Or, Center } from "../styles/views/Welcome";
 import { ContainerInput, P, StyleSelect } from "../styles/views/StepServices";
 import Footer from "../components/Footer";
+import Favoritos from "../components/Favoritos";
+import Wompi from "../components/Wompi";
 
 export let cart = []
 const ServiceStep1 = () => {
   const id = new URLSearchParams(window.location.search).get("id");
   const navigate = useNavigate();
   const [jor, setJor] = useState(null);
+  const [activo, setActivo] = useState(false);
   cart = [];
   function setJornada(){
     cart.push(id, jor);
@@ -28,10 +31,10 @@ const ServiceStep1 = () => {
           <option value="media">Media Jornada</option>
         </StyleSelect>
       </ContainerInput>
-
-      <ButtonStandard margin="1" color="azul">
+      <ButtonStandard margin="1" color="azul" onClick={() => setActivo(true)}>
         Seleccionar Empleado
       </ButtonStandard>
+      {activo === true ? <Favoritos /> : null}
       <Center>
         <Line></Line>
         <Or bg="blanco">OR</Or>

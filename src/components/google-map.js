@@ -37,7 +37,7 @@ function GoogleMapp() {
   if (!isLoaded) {
     return <div />
   }
-  cart.splice(4, 1);
+
   async function clearRoute() {
     if (originRef.current.value === '') {
       return
@@ -51,7 +51,7 @@ function GoogleMapp() {
       travelMode: google.maps.TravelMode.DRIVING,
     })
     setDirectionsResponse(results)
-    cart.push(originRef.current.value)
+    localStorage.setItem("Address", originRef.current.value)
     CalculateRoute(originRef.current.value, employee)
   }
 
