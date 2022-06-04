@@ -24,6 +24,7 @@ import ProfileEmployee from "../pages/Empleado";
 import Notification from "../pages/profile/Notifications";
 import Payment from "../pages/Payment";
 import Process from "../pages/Processed";
+import MiCalendario from "../pages/MiCalendario";
 
 function Authenticated() {
   const { user } = useAuth();
@@ -63,6 +64,7 @@ function Authenticated() {
             <Route path="/address" element={<Direcciones />} />
             <Route path="/notification" element={<Notification />} />
             <Route path="/payment" element={<Payment />} />
+            <Route path="/mi_calendario" element={<MiCalendario />} />
           </>
         ) : (
           <Route path="/*" element={"<ProfileForm />"} />

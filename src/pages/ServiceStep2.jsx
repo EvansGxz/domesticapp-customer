@@ -3,9 +3,8 @@ import HeaderViews from "../components/HeaderViews";
 import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
 import Footer from "../components/Footer";
-import CalendarPick, { fecha } from "../components/Calendar";
 import { cart } from "./ServiceStep1";
-import CalendarPicker from "../components/CalendarPicker";
+import CalendarPicker, { fecha } from "../components/CalendarPicker";
 
 
 const ServiceStep2 = () => {
@@ -13,7 +12,7 @@ const ServiceStep2 = () => {
   //const [value, onChange] = useState('10:00');
   cart.splice(2, 1);
   function setDate(){
-    cart.push(fecha)
+    cart[2] = fecha;
     navigate("/select_service3")
   }
 

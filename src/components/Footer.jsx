@@ -31,7 +31,7 @@ const Footer = () => {
       <Link to="/config">
         <img src={config} alt="config" />
       </Link>
-      <Link to="/calendar">
+      <Link to="/mi_calendario">
         <img src={calendar} alt="calendar" />
       </Link>
       <Link to="/support">
