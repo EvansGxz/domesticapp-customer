@@ -22,9 +22,8 @@ const Support = () => {
           {IconsAyuda.map((iconAyuda) => (
             <NewLink key={iconAyuda.id} to={iconAyuda.ruta}>
               <ContainerIcon>
-              <a href={iconAyuda.link} >
                 <img src={iconAyuda.img} alt={iconAyuda.nombre} />
-                <Info>{iconAyuda.nombre}</Info></a>
+                <Info>{iconAyuda.nombre}</Info>
               </ContainerIcon>
             </NewLink>
           ))}
