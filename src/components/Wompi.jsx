@@ -12,12 +12,14 @@ function Wompi(){
 
     let discount = 0;
     let result = null
+    localStorage.setItem('category_name', order.category_name)
    if(localStorage.getItem('Cupon')){
       discount = "0."+localStorage.getItem('Cupon')
       discount = parseFloat(discount)
       console.log(discount)
       result = discount *(order.price*100);
       result = (order.price*100) - result
+      
    }  
   return(
     <>

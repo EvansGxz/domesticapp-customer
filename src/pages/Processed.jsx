@@ -18,20 +18,20 @@ function Process(){
   const alimento =  localStorage.getItem("Alimento");
   const employee = localStorage.getItem("Empleado");
   const cuponID = localStorage.getItem("CuponID");
-  const cupName =  localStorage.getItem("CuponName")
+  const cupName =  localStorage.getItem("CuponName");
+  const catName = localStorage.getItem('category_name');
   const getOrder = { category_id: CategoryID, employee_id: employee, customer_id: user.id, workday: jornada, discount: cupName,
                      address: address, start_date: year, supply_food: alimento, service_time: time };
-                     console.log(getOrder)
+                    
   createOrderDetail(getOrder).then(() =>{
-    localStorage.clear();
     createNotification({name: "Servicio agendado",
-    body: "Notificacion de prueba",
+    body: `Su servicio de ${catName} ya está en tu calendario!`,
     customer_id: user.id})
     if(cuponID){
       DeleteCuponUser(cuponID);
     }
+    localStorage.clear();
   });
-
   
   return (
     <>
