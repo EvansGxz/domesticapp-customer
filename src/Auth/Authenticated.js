@@ -22,15 +22,19 @@ import Cupons from "../pages/profile/Cupons";
 import History from "../pages/profile/History";
 import ProfileEmployee from "../pages/Empleado";
 import Notification from "../pages/profile/Notifications";
+
 import Editar from "../pages/profile/Editar";
 import LastServices from "../pages/profile/LastServices";
 import Terminos from "../pages/profile/Terminos";
 import Politicas from "../pages/profile/Politicas";
 import Autorizacion from '../pages/profile/Autorizacion'
 
+import Payment from "../pages/Payment";
+import Process from "../pages/Processed";
+
+
 function Authenticated() {
   const { user } = useAuth();
-  console.log(user);
   return (
     <>
       <GlobalStyle />
@@ -44,8 +48,16 @@ function Authenticated() {
 
             <Route path="/verification" element={<h2>Verify</h2>} />
 
+
             <Route path="/employee_profile" element={<ProfileEmployee />} />
             <Route path="/select_service/:id" element={<ServiceStep1 />} />
+
+           
+            <Route
+              path="/employee_profile"
+              element={<ProfileEmployee />}
+            />
+            <Route path="/select_service" element={<ServiceStep1 />} />
             <Route path="/select_service2" element={<ServiceStep2 />} />
             <Route path="/select_service3" element={<ServiceStep3 />} />
             <Route path="/select_service4" element={<ServiceStep4 />} />
@@ -68,6 +80,16 @@ function Authenticated() {
             <Route path="/authorization" element={<Autorizacion />} />
             <Route path="/process_payment" element={"<Payment />"} />
             <Route path="/services" element={"<ServicePage />"} />
+
+            <Route path="/process_payment" element={<Process />} />
+            <Route path="/services" element={"<ServicePage />"} />
+            <Route path="/history" element={<History />} />
+            <Route path="/cupons" element={<Cupons />} />
+            <Route path="/profile_employee" element={<ProfileForm />} />
+            <Route path="/address" element={<Direcciones />} />
+            <Route path="/notification" element={<Notification />} />
+            <Route path="/payment" element={<Payment />} />
+
           </>
         ) : (
           <Route path="/*" element={"<ProfileForm />"} />

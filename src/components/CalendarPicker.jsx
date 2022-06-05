@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Calendar } from "react-multi-date-picker";
+import DatePicker, { DateObject } from "react-multi-date-picker";
+import TimePicker from "react-multi-date-picker/plugins/time_picker";
 import DatePanel from "react-multi-date-picker/plugins/date_panel";
 import styled from "styled-components";
 
@@ -18,18 +19,32 @@ const Title = styled.p`
 `;
 
 const CalendarPicker = () => {
-  const [startDate, setStartDate] = useState([]);
-  const format = "MM/DD/YYYY";
+  //const [startDate, setStartDate] = useState([]);
+  //const format="MM/DD/YYYY HH:mm:ss"
+  const [values, setValues] = useState(
+    [1, 2, 3].map((number) =>
+      new DateObject().set({
+        day: number,
+        hour: number,
+        minute: number,
+        second: number,
+      })
+    )
+    
+  );
+  const date = [new Date(2022, 6, 1), new Date(2022, 6, 5), new Date(2022, 6, 3)]
   return (
     <Container>
       <Title>Seleccionar fecha en el calendario:</Title>
-      <Calendar
-        value={startDate}
-        onChange={setStartDate}
-        format={format}
-        plugins={[<DatePanel />]}
+      <DatePicker
+        value={date}
+        onChange={setValues}
+        format="MM/DD/YYYY HH:mm:ss"
         multiple
-        sort
+        plugins={[
+    <TimePicker position="bottom" />,
+    <DatePanel markFocused />
+  ]}
       />
     </Container>
   );

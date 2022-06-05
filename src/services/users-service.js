@@ -30,3 +30,7 @@ export async function deleteUser() {
 export async function showEmployee(CategoryID) {
   return await apiFetch(`employee/${CategoryID}`);
 }
+
+export async function showEmploye() {
+  return await apiFetch(`employee`);
+}

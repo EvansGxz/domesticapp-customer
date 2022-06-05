@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import HeaderViews from "../components/HeaderViews";
 import { BasicContainer } from "../styles/containers";
@@ -6,24 +6,35 @@ import { ButtonStandard } from "../styles/buttons";
 import { Line, Or, Center } from "../styles/views/Welcome";
 import { ContainerInput, P, StyleSelect } from "../styles/views/StepServices";
 import Footer from "../components/Footer";
+import Favoritos from "../components/Favoritos";
+import Wompi from "../components/Wompi";
 
+export let cart = []
 const ServiceStep1 = () => {
+  const id = new URLSearchParams(window.location.search).get("id");
   const navigate = useNavigate();
+  const [jor, setJor] = useState(null);
+  const [activo, setActivo] = useState(false);
+  cart = [];
+  function setJornada(){
+    cart.push(id, jor);
+    navigate("/select_service2")
+  }
   return (
     <BasicContainer>
       <HeaderViews title="elige tu servicio" />
       <ContainerInput margin="5">
         <P>Tipo de jornada</P>
-        <StyleSelect>
+        <StyleSelect onChange={(e) => setJor(e.target.value)}>
           <option value="">Elige tipo de jornada</option>
           <option value="completa">Jornada Completa</option>
           <option value="media">Media Jornada</option>
         </StyleSelect>
       </ContainerInput>
-
-      <ButtonStandard margin="1" color="azul">
+      <ButtonStandard margin="1" color="azul" onClick={() => setActivo(true)}>
         Seleccionar Empleado
       </ButtonStandard>
+      {activo === true ? <Favoritos /> : null}
       <Center>
         <Line></Line>
         <Or bg="blanco">OR</Or>
@@ -31,7 +42,7 @@ const ServiceStep1 = () => {
       <ButtonStandard
         marginT="2"
         color="azul"
-        onClick={() => navigate("/select_service2")}
+        onClick={() => setJornada()}
       >
         Continuar
       </ButtonStandard>
