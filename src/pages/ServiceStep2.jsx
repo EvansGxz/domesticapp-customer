@@ -3,7 +3,7 @@ import HeaderViews from "../components/HeaderViews";
 import { BasicContainer } from "../styles/containers";
 import { ButtonStandard } from "../styles/buttons";
 import Footer from "../components/Footer";
-import CalendarPick, { fecha } from "../components/Calendar";
+import { fecha } from "../components/Calendar";
 import { cart } from "./ServiceStep1";
 import CalendarPicker from "../components/CalendarPicker";
 

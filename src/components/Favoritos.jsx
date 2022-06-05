@@ -3,7 +3,6 @@ import { useAuth } from "../context/auth-context";
 import { showFavoritos } from "../services/favorites-services";
 import { NewLink } from "../styles/views/Profesions";
 import styled from "styled-components";
-import { cart } from "../pages/ServiceStep1";
 
 const Photo = styled.img`
 width: 15.065rem;

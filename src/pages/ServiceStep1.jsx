@@ -7,7 +7,6 @@ import { Line, Or, Center } from "../styles/views/Welcome";
 import { ContainerInput, P, StyleSelect } from "../styles/views/StepServices";
 import Footer from "../components/Footer";
 import Favoritos from "../components/Favoritos";
-import Wompi from "../components/Wompi";
 
 export let cart = []
 const ServiceStep1 = () => {

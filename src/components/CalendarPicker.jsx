@@ -30,9 +30,13 @@ const CalendarPicker = () => {
         second: number,
       })
     )
-    
   );
-  const date = [new Date(2022, 6, 1), new Date(2022, 6, 5), new Date(2022, 6, 3)]
+
+  const date = [
+    new Date(2022, 6, 1),
+    new Date(2022, 6, 5),
+    new Date(2022, 6, 3),
+  ];
   return (
     <Container>
       <Title>Seleccionar fecha en el calendario:</Title>
@@ -41,11 +45,9 @@ const CalendarPicker = () => {
         onChange={setValues}
         format="MM/DD/YYYY HH:mm:ss"
         multiple
-        plugins={[
-    <TimePicker position="bottom" />,
-    <DatePanel markFocused />
-  ]}
+        plugins={[<TimePicker position="bottom" />, <DatePanel markFocused />]}
       />
+      {values && <p>Fecha seleccionada {values}</p>}
     </Container>
   );
 };
