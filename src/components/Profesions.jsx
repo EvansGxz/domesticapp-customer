@@ -2,7 +2,6 @@
 // import { useAuth } from "../context/auth-context";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { Oficios } from "../constantes/oficios";
 import { useAuth } from "../context/auth-context";
 import { ButtonStandard } from "../styles/buttons";
 import {
