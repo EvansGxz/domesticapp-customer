@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import DatePicker, { Calendar } from "react-multi-date-picker";
-import TimePicker from "react-multi-date-picker/plugins/time_picker";
+import { Calendar } from "react-multi-date-picker";
+// import TimePicker from "react-multi-date-picker/plugins/time_picker";
 import DatePanel from "react-multi-date-picker/plugins/date_panel";
 import styled from "styled-components";
 import { useAuth } from "../context/auth-context";
@@ -24,10 +24,10 @@ const MiCalendar = () => {
   const { user } = useAuth();
   const calendarRef = useRef();
   const [value, setValue] = useState();
-  const [fecha, setFecha] = useState();
+  // const [fecha, setFecha] = useState();
   useEffect(() => {
     showOrderDetail(user.id).then(setValue);
-  }, []);
+  }, [user.id]);
 
   //const date = [new Date(2022, 6, 1), new Date(2022, 6, 5), new Date(2022, 6, 3)]
   let date = [];

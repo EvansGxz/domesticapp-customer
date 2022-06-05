@@ -27,7 +27,7 @@ import Editar from "../pages/profile/Editar";
 import LastServices from "../pages/profile/LastServices";
 import Terminos from "../pages/profile/Terminos";
 import Politicas from "../pages/profile/Politicas";
-import Autorizacion from '../pages/profile/Autorizacion'
+import Autorizacion from "../pages/profile/Autorizacion";
 
 import Payment from "../pages/Payment";
 import Process from "../pages/Processed";
@@ -36,7 +36,6 @@ import Equipo from "../pages/Equipo";
 import Servicios from "../pages/support/Servicios";
 import Empleados from "../pages/support/Empleados";
 import Tratamiento from "../pages/profile/Autorizacion";
-
 
 function Authenticated() {
   const { user } = useAuth();
@@ -53,15 +52,9 @@ function Authenticated() {
             <Route path="/" element={<Home />} />
             <Route path="/verification" element={<h2>Verify</h2>} />
 
-
             <Route path="/employee_profile" element={<ProfileEmployee />} />
             <Route path="/select_service/:id" element={<ServiceStep1 />} />
 
-           
-            <Route
-              path="/employee_profile"
-              element={<ProfileEmployee />}
-            />
             <Route path="/select_service" element={<ServiceStep1 />} />
             <Route path="/select_service2" element={<ServiceStep2 />} />
             <Route path="/select_service3" element={<ServiceStep3 />} />
@@ -102,7 +95,6 @@ function Authenticated() {
             <Route path="/terminos" element={<Terminos />} />
             <Route path="/politicas" element={<Politicas />} />
             <Route path="/tratamientos" element={<Tratamiento />} />
-
           </>
         ) : (
           <Route path="/*" element={<ProfileForm />} />
