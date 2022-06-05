@@ -9,7 +9,10 @@ function Process(){
   const { user } = useAuth();
   const navigate = useNavigate();
   const address =  localStorage.getItem("Address");
-  const calendar =  localStorage.getItem("Calendar");
+  let calendar =  localStorage.getItem("Calendar");
+  calendar = new Date(calendar);
+  let year = calendar.getFullYear()+"-"+calendar.getMonth()+"-"+calendar.getDay();
+  let time = calendar.getHours()+":"+calendar.getMinutes();
   const CategoryID =  localStorage.getItem("Category");
   const jornada =  localStorage.getItem("Jornada");
   const alimento =  localStorage.getItem("Alimento");
@@ -17,13 +20,16 @@ function Process(){
   const cuponID = localStorage.getItem("CuponID");
   const cupName =  localStorage.getItem("CuponName")
   const getOrder = { category_id: CategoryID, employee_id: employee, customer_id: user.id, workday: jornada, discount: cupName,
-                     address: address, start_date: calendar.toString(), supply_food: alimento, service_time: calendar.split(" ")[1].toString() };
+                     address: address, start_date: year, supply_food: alimento, service_time: time };
+                     console.log(getOrder)
   createOrderDetail(getOrder).then(() =>{
     localStorage.clear();
     createNotification({name: "Servicio agendado",
     body: "Notificacion de prueba",
     customer_id: user.id})
-    DeleteCuponUser(cuponID);
+    if(cuponID){
+      DeleteCuponUser(cuponID);
+    }
   });
 
   

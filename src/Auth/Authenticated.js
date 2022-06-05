@@ -31,6 +31,7 @@ import Equipo from "../pages/Equipo";
 import Servicios from "../pages/support/Servicios";
 import Empleados from "../pages/support/Empleados";
 import Tratamiento from "../pages/profile/Autorizacion";
+import Sup from "../pages/Sup";
 
 
 function Authenticated() {
@@ -78,6 +79,7 @@ function Authenticated() {
             <Route path="/terminos" element={<Terminos />} />
             <Route path="/politicas" element={<Politicas />} />
             <Route path="/tratamientos" element={<Tratamiento />} />
+            <Route path="/sup" element={<Sup />} />
           </>
         ) : (
           <Route path="/*" element={<ProfileForm />} />
