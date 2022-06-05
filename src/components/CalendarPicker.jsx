@@ -19,6 +19,7 @@ const Title = styled.p`
 `;
 export let fecha;
 const CalendarPicker = () => {
+
   const [value, setValue] = useState()
   //const date = [new Date(2022, 6, 1), new Date(2022, 6, 5), new Date(2022, 6, 3)]
   const favorito = "";

@@ -13,8 +13,8 @@ import ServiceStep4 from "../pages/ServiceStep4";
 import Preguntas from "../pages/support/Preguntas";
 import Accidentes from "../pages/support/Accidentes";
 import Profile from "../pages/profile/Profile";
-import Notificaciones from '../pages/support/Notificaciones'
-import Slider from '../pages/Slider'
+import Notificaciones from "../pages/support/Notificaciones";
+import Slider from "../pages/Slider";
 import { GlobalStyle } from "../styles/GlobalStyle";
 import Direcciones from "../pages/profile/Direcciones";
 import ProfileForm from "../pages/profile/Editar";
@@ -22,15 +22,21 @@ import Cupons from "../pages/profile/Cupons";
 import History from "../pages/profile/History";
 import ProfileEmployee from "../pages/Empleado";
 import Notification from "../pages/profile/Notifications";
+
+import Editar from "../pages/profile/Editar";
+import LastServices from "../pages/profile/LastServices";
+import Terminos from "../pages/profile/Terminos";
+import Politicas from "../pages/profile/Politicas";
+import Autorizacion from '../pages/profile/Autorizacion'
+
 import Payment from "../pages/Payment";
 import Process from "../pages/Processed";
 import MiCalendario from "../pages/MiCalendario";
 import Equipo from "../pages/Equipo";
 import Servicios from "../pages/support/Servicios";
 import Empleados from "../pages/support/Empleados";
-import Terminos from "../pages/profile/Terminos";
-import Politicas from "../pages/profile/Politicas";
 import Tratamiento from "../pages/profile/Autorizacion";
+
 
 function Authenticated() {
   const { user } = useAuth();
@@ -46,6 +52,11 @@ function Authenticated() {
             <Route index element={<Navigate to="home" />} />
             <Route path="/" element={<Home />} />
             <Route path="/verification" element={<h2>Verify</h2>} />
+
+
+            <Route path="/employee_profile" element={<ProfileEmployee />} />
+            <Route path="/select_service/:id" element={<ServiceStep1 />} />
+
            
             <Route
               path="/employee_profile"
@@ -62,6 +73,19 @@ function Authenticated() {
             <Route path="/accidentes" element={<Accidentes />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/notifications" element={<Notificaciones />} />
+            <Route path="/edit_profile" element={<Editar />} />
+            <Route path="/last_services" element={<LastServices />} />
+            <Route path="/cupons" element={<Cupons />} />
+            <Route path="/address" element={<Direcciones />} />
+            <Route path="/history" element={<History />} />
+            <Route path="/profile_employee" element={<ProfileForm />} />
+            <Route path="/notification" element={<Notification />} />
+            <Route path="/terms_conditions" element={<Terminos />} />
+            <Route path="/privacy_policies" element={<Politicas />} />
+            <Route path="/authorization" element={<Autorizacion />} />
+            <Route path="/process_payment" element={"<Payment />"} />
+            <Route path="/services" element={"<ServicePage />"} />
+
             <Route path="/process_payment" element={<Process />} />
             <Route path="/services" element={"<ServicePage />"} />
             <Route path="/history" element={<History />} />
@@ -70,6 +94,7 @@ function Authenticated() {
             <Route path="/address" element={<Direcciones />} />
             <Route path="/notification" element={<Notification />} />
             <Route path="/payment" element={<Payment />} />
+
             <Route path="/mi_calendario" element={<MiCalendario />} />
             <Route path="/equipo" element={<Equipo />} />
             <Route path="/support/servicios" element={<Servicios />} />
@@ -77,6 +102,7 @@ function Authenticated() {
             <Route path="/terminos" element={<Terminos />} />
             <Route path="/politicas" element={<Politicas />} />
             <Route path="/tratamientos" element={<Tratamiento />} />
+
           </>
         ) : (
           <Route path="/*" element={<ProfileForm />} />

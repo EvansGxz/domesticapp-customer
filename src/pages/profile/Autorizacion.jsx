@@ -12,6 +12,11 @@ import {
   AutMod2,
 } from "../../constantes/paragraph";
 import { TermsContainer } from "../../styles/views/Profile";
+import styled from "styled-components";
+
+const P = styled.p`
+  text-align: justify;
+`;
 
 function Tratamiento() {
   return (
@@ -21,14 +26,14 @@ function Tratamiento() {
       <h3>GARANTÍA Y PROTECCIÓN DE DATOS</h3>
       </TermsContainer>
       <TermsContainer>
-        <p>{AutGar1}</p>
-        <p>{AutGar2}</p>
+        <P>{AutGar1}</P>
+        <P>{AutGar2}</P>
       </TermsContainer>
       <TermsContainer>
       <h3>CALIDAD DE LOS DATOS</h3>
       </TermsContainer>
       <TermsContainer>
-        <p>{AutCal}</p>
+        <P>{AutCal}</P>
       </TermsContainer>
       <TermsContainer>
       <h3>
@@ -36,17 +41,17 @@ function Tratamiento() {
         OPOSICIÓN
       </h3></TermsContainer>
       <TermsContainer>
-        <p>{AutEje}</p>
+        <P>{AutEje}</P>
       </TermsContainer>
       <TermsContainer>
       <h3>MEDIDAS DE SEGURIDAD</h3></TermsContainer>
       <TermsContainer>
-        <p>{AutMed}</p>
+        <P>{AutMed}</P>
       </TermsContainer>
       <TermsContainer>
       <h3>MODIFICACIÓN DE LA POLÍTICA DE PRIVACIDAD</h3></TermsContainer>
       <TermsContainer>
-        <p>{AutMod1}</p>
+        <P>{AutMod1}</P>
       </TermsContainer>
       <TermsContainer>
       <h2>VARIOS</h2>
@@ -54,17 +59,17 @@ function Tratamiento() {
       <TermsContainer>
       <h3>MODIFICACIONES</h3></TermsContainer>
       <TermsContainer>
-        <p>{AutMod2}</p>
+        <P>{AutMod2}</P>
       </TermsContainer>
       <TermsContainer>
       <h3>MENORES DE EDAD</h3></TermsContainer>
       <TermsContainer>
-        <p>{AutMen}</p>
+        <P>{AutMen}</P>
       </TermsContainer>
       <TermsContainer>
       <h3>LEY Y JURISDICCIÓN</h3></TermsContainer>
       <TermsContainer>
-        <p>{AutLey}</p>
+        <P>{AutLey}</P>
       </TermsContainer>
       <Footer />
     </>
