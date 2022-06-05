@@ -106,13 +106,13 @@ export default function Cupons() {
                 onChange={(e) => eventHandleCupon(e)}
               />
               <ButtonStandard color="azul" onClick={() => eventCompleteCupon()}>
-                Submit
+                Canjear
               </ButtonStandard>
             </UseCupons>
 
             <Title>Mis cupones</Title>
-            {cupons ? (
-              cupons.map((cupon) => {
+            {x ? (
+              x.map((cupon) => {
                 console.log(cupon);
                 return (
                   <ContainerCupons key={cupon.cupon.id}>
@@ -123,7 +123,7 @@ export default function Cupons() {
                         Código: <span>{cupon.cupon.name}</span>
                       </P>
                     </InfoCupon>
-                    <ButtonStandard color="azul" width="50%">
+                    <ButtonStandard color="azul" width="50%" id={cupon.cupon.id} onClick={(e) => handleCupon(e)}>
                       Usar cupón
                     </ButtonStandard>
                   </ContainerCupons>
@@ -137,24 +137,6 @@ export default function Cupons() {
           <div>no hay datos aún</div>
         )}
       </SubContainer>
-      <h2>Mis cupones</h2>
-      {x ? (
-        x.map((cupon) => (
-          <>
-            <ul>
-              <li>{cupon.cupon.cupon_title}</li>
-              <li>{cupon.cupon.discount + "% de descuento"}</li>
-              <li>{"Código: " + cupon.cupon.name}</li>
-              <button id={cupon.cupon.id} onClick={(e) => handleCupon(e)}>
-                Canjear
-              </button>
-            </ul>{" "}
-            <p>{}</p>
-          </>
-        ))
-      ) : (
-        <div>no hay datos aún</div>
-      )}
       <Footer />
     </BasicContainer>
   );

@@ -27,7 +27,7 @@ export const CategoryLinks = [
         nombre: "Mi Historial de Servicios",
         ruta: "/history",
       },
-      { id: 3, icon: perfilChat, nombre: "Chat de Soporte", ruta: "/" },
+      { id: 3, icon: perfilChat, nombre: "Chat de Soporte", ruta: "/sup" },
     ],
   },
   {
