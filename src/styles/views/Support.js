@@ -27,3 +27,40 @@ export const Info = styled.span`
   display: inline;
   margin-left: 3rem;
 `;
+
+export const SupportCardText = styled.div`
+
+  margin: 15px auto 20px auto;
+  max-width: 90%;
+  padding: 14px;
+  background-color: #fff;
+  box-shadow: 0px 20px 20px rgba(57, 57, 57, 0.1);
+  border-radius: 10px;
+  text-align: justify;
+`;
+
+export const SupportCardTitle = styled.div`
+  font-weight: bold;
+  margin: 15px auto 0px auto;
+  max-width: 90%;
+  padding: 14px;
+  background-color: #fff;
+  box-shadow: 0px 20px 20px rgba(57, 57, 57, 0.1);
+  border-radius: 10px;
+  
+`;
+
+export const BlueTitle = styled.h3`
+  margin: 2rem 0;
+  text-align: center;
+  color: #0BBBEF;
+`;
+
+export const Body = styled.p`
+  margin: 2rem 0;
+  text-align: justify;
+  color: #000000;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 22.5px
+`;

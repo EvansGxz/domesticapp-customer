@@ -28,8 +28,8 @@ const Footer = () => {
       <Link to="/home">
         <img src={home} alt="home" />
       </Link>
-      <Link to="/config">
-        <img src={config} alt="config" />
+      <Link to="/equipo">
+        <img src={config} alt="equipo" />
       </Link>
       <Link to="/mi_calendario">
         <img src={calendar} alt="calendar" />
