@@ -72,10 +72,10 @@ export default function Cupons() {
     });
   }
 
-  // function handleCupon(e) {
-  //   console.log(e.target.id);
-  //   showCuponUserName(e.target.id.toString()).then(setShowCupons);
-  // }
+  function handleCupon(e) {
+    console.log(e.target.id);
+    showCuponUserName(e.target.id.toString()).then(setShowCupons);
+  }
   console.log(showCupons);
   if (showCupons) {
     showCupons.forEach((c) => {
@@ -85,14 +85,14 @@ export default function Cupons() {
     });
   }
 
-  // let x;
-  // if (cupons) {
-  //   x = cupons.filter(
-  //     (value, index, self) =>
-  //       index ===
-  //       self.findIndex((t) => t.cupon.cupon_title === value.cupon.cupon_title)
-  //   );
-  // }
+  let x;
+  if (cupons) {
+    x = cupons.filter(
+      (value, index, self) =>
+        index ===
+        self.findIndex((t) => t.cupon.cupon_title === value.cupon.cupon_title)
+    );
+  }
   return (
     <BasicContainer>
       <HeaderViews title="Cupones" />
@@ -137,7 +137,24 @@ export default function Cupons() {
           <div>no hay datos aún</div>
         )}
       </SubContainer>
-
+      <h2>Mis cupones</h2>
+      {x ? (
+        x.map((cupon) => (
+          <>
+            <ul>
+              <li>{cupon.cupon.cupon_title}</li>
+              <li>{cupon.cupon.discount + "% de descuento"}</li>
+              <li>{"Código: " + cupon.cupon.name}</li>
+              <button id={cupon.cupon.id} onClick={(e) => handleCupon(e)}>
+                Canjear
+              </button>
+            </ul>{" "}
+            <p>{}</p>
+          </>
+        ))
+      ) : (
+        <div>no hay datos aún</div>
+      )}
       <Footer />
     </BasicContainer>
   );
