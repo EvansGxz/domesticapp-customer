@@ -7,3 +7,7 @@ export async function indexNotification() {
 export async function showNotification(NotificationID) {
   return await apiFetch(`notifications/${NotificationID}`);
 }
+
+export async function createNotification(newNotification) {
+  return await apiFetch('notifications/', { body: newNotification });
+}

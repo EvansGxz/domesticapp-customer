@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { ContactUs } from "../../components/Emails";
 import { useAuth } from "../../context/auth-context";
 import { showNotification } from "../../services/notifications-service";
 
@@ -15,15 +14,12 @@ export default function Notification() {
       
       {notification ? (
         notification.map((not) => {
-          console.log(not);
           return (
             <>
-
               <ul>
                 <li>{not.name}</li>
                 <li>{not.body}</li>
               </ul> 
-              <ContactUs />
             </>
           );
         })

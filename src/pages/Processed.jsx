@@ -2,6 +2,7 @@ import { useAuth } from "../context/auth-context";
 import { createOrderDetail } from "../services/order-details-services";
 import { ButtonStandard } from "../styles/buttons";
 import { useNavigate } from "react-router-dom";
+import { createNotification } from "../services/notifications-service";
 
 function Process(){
   const { user } = useAuth();
@@ -13,10 +14,14 @@ function Process(){
   const alimento =  localStorage.getItem("Alimento")
   const employee = localStorage.getItem("Empleado")
   const getOrder = { category_id: CategoryID, employee_id: employee, customer_id: user.id, workday: jornada,
-                     address: address, start_date: calendar, supply_food: alimento };
+                     address: address, start_date: calendar.toString(), supply_food: alimento, service_time: calendar.split(" ")[1].toString() };
   createOrderDetail(getOrder).then(() =>{
     localStorage.clear();
+    createNotification({name: "Servicio agendado",
+    body: "Notificacion de prueba",
+    customer_id: user.id})
   });
+
   
   return (
     <>
