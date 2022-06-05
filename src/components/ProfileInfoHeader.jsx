@@ -1,19 +1,26 @@
 import React from "react";
 import { useAuth } from "../context/auth-context";
-import styled from "styled-components";
-
-const Container = styled.div`
-  width: 100%;
-  padding: 0 1rem;
-`;
+import {
+  ContainerImg,
+  ContainerInfo,
+  Container,
+  Img,
+  UserName,
+  Servicios,
+} from "../styles/views/ProfileHeader";
 
 const ProfileInfoHeader = () => {
   const { user } = useAuth();
   return (
-    <Container>
-      <img src={user?.image_url} alt={user?.full_name} />
-      <p>{user?.full_name}</p>
-    </Container>
+    <ContainerInfo>
+      <Container>
+        <ContainerImg>
+          <Img src={user?.image_url} alt={user?.full_name} />
+        </ContainerImg>
+        <UserName>{user?.full_name}</UserName>
+      </Container>
+      <Servicios>325 Servicios Solicitados</Servicios>
+    </ContainerInfo>
   );
 };
 

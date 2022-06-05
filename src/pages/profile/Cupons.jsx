@@ -3,6 +3,9 @@ import { Input } from "../../styles/views/Login";
 import { useAuth } from "../../context/auth-context";
 import { showCupon } from "../../services/cupon-service";
 import { createCuponUser, showCuponUser } from "../../services/cupons-services";
+import HeaderViews from "../../components/HeaderViews";
+import Footer from "../../components/Footer";
+import { BasicContainer } from "../../styles/containers";
 
 export default function Cupons() {
   const { user } = useAuth();
@@ -20,43 +23,49 @@ export default function Cupons() {
 
   function eventCompleteCupon() {
     const getCupon = { customer_id: user.id, cupon_id: newCupon.id };
-    createCuponUser(getCupon).then(() => {window.location.reload()});
-    
+    createCuponUser(getCupon).then(() => {
+      window.location.reload();
+    });
   }
-  
-  return cupons ? (
-    <>
-      
-      <div>
-        <Input
-          type="text"
-          placeholder="Ingresa tu cupón"
-          onChange={(e) => eventHandleCupon(e)}
-        />
-      </div>
-      <button onClick={() => eventCompleteCupon()}>Submit</button>
 
-      <h2>Mis cupones</h2>
+  return (
+    <BasicContainer>
+      <HeaderViews title="Cupones" />
       {cupons ? (
-        cupons.map((cupon) => {
-          console.log(cupon);
-          return (
-            <>
+        <>
+          <div>
+            <Input
+              type="text"
+              placeholder="Ingresa tu cupón"
+              onChange={(e) => eventHandleCupon(e)}
+            />
+          </div>
+          <button onClick={() => eventCompleteCupon()}>Submit</button>
 
-              <ul>
-                <li>{cupon.cupon.cupon_title}</li>
-                <li>{cupon.cupon.discount+"% de descuento"}</li>
-                <li>{"Código: "+cupon.cupon.name}</li>
-                <button>validar</button>
-              </ul>  <p>{}</p>
-            </>
-          );
-        })
+          <h2>Mis cupones</h2>
+          {cupons ? (
+            cupons.map((cupon) => {
+              console.log(cupon);
+              return (
+                <>
+                  <ul>
+                    <li>{cupon.cupon.cupon_title}</li>
+                    <li>{cupon.cupon.discount + "% de descuento"}</li>
+                    <li>{"Código: " + cupon.cupon.name}</li>
+                    <button>validar</button>
+                  </ul>{" "}
+                  <p>{}</p>
+                </>
+              );
+            })
+          ) : (
+            <div>no hay datos aún</div>
+          )}
+        </>
       ) : (
         <div>no hay datos aún</div>
       )}
-    </>
-  ) : (
-    <div>no hay datos aún</div>
+      <Footer />
+    </BasicContainer>
   );
 }
