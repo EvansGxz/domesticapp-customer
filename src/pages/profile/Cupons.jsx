@@ -28,6 +28,18 @@ export default function Cupons() {
     });
   }
 
+  function handleCupon(e){
+   localStorage.setItem("Cupon", e.target.id)
+  }
+  let x
+  if(cupons){
+    
+    x = cupons.filter((value, index, self) =>
+    index === self.findIndex((t) => (
+      t.cupon.cupon_title === value.cupon.cupon_title
+  ))
+)
+  }
   return (
     <BasicContainer>
       <HeaderViews title="Cupones" />
@@ -43,16 +55,15 @@ export default function Cupons() {
           <button onClick={() => eventCompleteCupon()}>Submit</button>
 
           <h2>Mis cupones</h2>
-          {cupons ? (
-            cupons.map((cupon) => {
-              console.log(cupon);
+          {x ? (
+            x.map((cupon) => {
               return (
                 <>
                   <ul>
                     <li>{cupon.cupon.cupon_title}</li>
                     <li>{cupon.cupon.discount + "% de descuento"}</li>
                     <li>{"Código: " + cupon.cupon.name}</li>
-                    <button>validar</button>
+                    <button id={cupon.cupon.id} onClick={e => handleCupon(e)}>validar</button>
                   </ul>{" "}
                   <p>{}</p>
                 </>
