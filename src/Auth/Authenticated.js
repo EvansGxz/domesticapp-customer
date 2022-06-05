@@ -24,7 +24,7 @@ import ProfileEmployee from "../pages/Empleado";
 import LastServices from "../pages/profile/LastServices";
 import Terminos from "../pages/profile/Terminos";
 import Politicas from "../pages/profile/Politicas";
-import Autorizacion from "../pages/profile/Autorizacion";
+// import Autorizacion from "../pages/profile/Autorizacion";
 
 import Payment from "../pages/Payment";
 import Process from "../pages/Processed";

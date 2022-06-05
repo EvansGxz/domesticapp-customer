@@ -72,10 +72,10 @@ export default function Cupons() {
     });
   }
 
-  function handleCupon(e) {
-    console.log(e.target.id);
-    showCuponUserName(e.target.id.toString()).then(setShowCupons);
-  }
+  // function handleCupon(e) {
+  //   console.log(e.target.id);
+  //   showCuponUserName(e.target.id.toString()).then(setShowCupons);
+  // }
   console.log(showCupons);
   if (showCupons) {
     showCupons.forEach((c) => {
@@ -85,14 +85,14 @@ export default function Cupons() {
     });
   }
 
-  let x;
-  if (cupons) {
-    x = cupons.filter(
-      (value, index, self) =>
-        index ===
-        self.findIndex((t) => t.cupon.cupon_title === value.cupon.cupon_title)
-    );
-  }
+  // let x;
+  // if (cupons) {
+  //   x = cupons.filter(
+  //     (value, index, self) =>
+  //       index ===
+  //       self.findIndex((t) => t.cupon.cupon_title === value.cupon.cupon_title)
+  //   );
+  // }
   return (
     <BasicContainer>
       <HeaderViews title="Cupones" />
