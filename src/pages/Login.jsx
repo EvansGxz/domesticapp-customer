@@ -7,6 +7,7 @@ import { useAuth } from "../context/auth-context";
 
 export default function Login() {
   const { login } = useAuth();
+  const [errors, setErrors] = useState(new Error());
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -19,9 +20,10 @@ export default function Login() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    login(form);
+    login(form).catch((error) => {
+      setErrors(error);
+    })
   }
-
   return (
     <BasicContainer>
       <img src={Logo} alt="logo-domesticapp" />
@@ -43,6 +45,7 @@ export default function Login() {
           placeholder="******"
           value={form.password}
           onChange={handleFormChange}
+          error={errors.message.split('"')}
         />
 
         <ButtonStandard type="submit" color="azul">

@@ -10,5 +10,12 @@ export async function showCuponUser(CuponUserID) {
 
 export async function createCuponUser(newCuponUser) {
   return await apiFetch('cupon_users/', { body: newCuponUser });
-   
+}
+
+export async function showCuponUserName(CuponUserID) {
+  return await apiFetch(`show_cupon/${CuponUserID}`);
+}
+
+export async function DeleteCuponUser(CuponUserID) {
+  return await apiFetch(`delete_cupon_users/${CuponUserID}`, { method: "DELETE" });
 }
