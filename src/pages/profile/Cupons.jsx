@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Input } from "../../styles/views/Login";
 import { useAuth } from "../../context/auth-context";
 import { showCupon } from "../../services/cupon-service";
-import { createCuponUser, showCuponUser } from "../../services/cupons-services";
+import { createCuponUser, showCuponUser, showCuponUserName } from "../../services/cupons-services";
 import HeaderViews from "../../components/HeaderViews";
 import Footer from "../../components/Footer";
 import { BasicContainer, SubContainer } from "../../styles/containers";
@@ -49,6 +49,7 @@ const P = styled.p`
 export default function Cupons() {
   const { user } = useAuth();
   const [cupons, setCupons] = useState(null);
+  const [showCupons, setShowCupons] = useState(null);
   const [newCupon, setNewCupon] = useState(null);
   useEffect(() => {
     showCuponUser(user.id).then(setCupons);
@@ -67,6 +68,28 @@ export default function Cupons() {
     });
   }
 
+  function handleCupon(e){
+    console.log(e.target.id);
+    showCuponUserName(e.target.id.toString()).then(setShowCupons);
+  }
+  console.log(showCupons);
+  if(showCupons){
+    showCupons.forEach((c)=>{
+        localStorage.setItem("Cupon", c.cupon.discount)
+        localStorage.setItem("CuponID", c.cupon.id)
+        localStorage.setItem("CuponName", c.cupon.name)
+    })
+  }
+
+  let x
+  if(cupons){
+    
+    x = cupons.filter((value, index, self) =>
+    index === self.findIndex((t) => (
+      t.cupon.cupon_title === value.cupon.cupon_title
+  ))
+)
+  }
   return (
     <BasicContainer>
       <HeaderViews title="Cupones" />
@@ -80,6 +103,7 @@ export default function Cupons() {
                 onChange={(e) => eventHandleCupon(e)}
               />
 
+<<<<<<< HEAD
               <ButtonStandard color="azul" onClick={() => eventCompleteCupon()}>
                 Submit
               </ButtonStandard>
@@ -112,6 +136,30 @@ export default function Cupons() {
           <div>no hay datos aún</div>
         )}
       </SubContainer>
+=======
+          <h2>Mis cupones</h2>
+          {x ? (
+            x.map((cupon) => {
+              return (
+                <>
+                  <ul>
+                    <li>{cupon.cupon.cupon_title}</li>
+                    <li>{cupon.cupon.discount + "% de descuento"}</li>
+                    <li>{"Código: " + cupon.cupon.name}</li>
+                    <button id={cupon.cupon.id} onClick={e => handleCupon(e)}>Canjear</button>
+                  </ul>{" "}
+                  <p>{}</p>
+                </>
+              );
+            })
+          ) : (
+            <div>no hay datos aún</div>
+          )}
+        </>
+      ) : (
+        <div>no hay datos aún</div>
+      )}
+>>>>>>> 06f32162173e2c1f4756a849e51a5be424754466
       <Footer />
     </BasicContainer>
   );

@@ -45,7 +45,7 @@ export const CategoryLinks = [
         id: 3,
         icon: perfilNotifi,
         nombre: "Notificaciones",
-        ruta: "/notification",
+        ruta: "/notifications",
       },
     ],
   },

@@ -1,6 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Calendar } from "react-multi-date-picker";
 // import TimePicker from "react-multi-date-picker/plugins/time_picker";
+import React, { useEffect, useState } from "react";
+import { Calendar } from "react-multi-date-picker";
+
 import DatePanel from "react-multi-date-picker/plugins/date_panel";
 import styled from "styled-components";
 import { useAuth } from "../context/auth-context";
@@ -40,7 +43,6 @@ const MiCalendar = () => {
       }
     });
   }
-  console.log(calendarRef);
   return (
     <Container>
       <p>
