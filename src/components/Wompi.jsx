@@ -9,6 +9,16 @@ function Wompi(){
     showCategory(CategoryID).then(setOrder)
   }, [CategoryID])
   let folio = cryptoRandomString({length: 24, type: 'base64'});
+
+    let discount = 0;
+    let result = null
+   if(localStorage.getItem('Cupon')){
+      discount = "0."+localStorage.getItem('Cupon')
+      discount = parseFloat(discount)
+      console.log(discount)
+      result = discount *(order.price*100);
+      result = (order.price*100) - result
+   }  
   return(
     <>
         {order ? (
@@ -19,7 +29,12 @@ function Wompi(){
 
             <input type="hidden" name="public-key" value="pub_test_iOm8S5UmqoKZKNXQKCoCHBKL9oVuHu3N" />
             <input type="hidden" name="currency" value="COP" />
-            <input type="hidden" name="amount-in-cents" value={order.price*100} />
+            {result ? (
+              <input type="hidden" name="amount-in-cents" value={result} />
+              
+            ) : (
+             <input type="hidden" name="amount-in-cents" value={order.price*100} />
+            )}
             <input type="hidden" name="reference" value={"COL3"+folio} />
             <input type="hidden" name="redirect-url" value="http://localhost:3000/process_payment" />
 

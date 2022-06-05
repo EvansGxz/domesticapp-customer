@@ -7,7 +7,7 @@ import { useAuth } from "../context/auth-context";
 
 export default function Login() {
   const { login } = useAuth();
-  const [errors, setErrors] = useState(null);
+  const [errors, setErrors] = useState(new Error());
   const [form, setForm] = useState({
     email: "",
     password: "",
