@@ -1,19 +1,18 @@
 import React from "react";
 import HeaderViews from "../../components/HeaderViews";
 import Footer from "../../components/Footer";
-import ProfileInfoHeader from "../../components/ProfileInfoHeader";
 import { BasicContainer } from "../../styles/containers";
-import LinksProfile from "../../components/LinksProfile";
 
-const Profile = () => {
+const LastServices = () => {
   return (
     <BasicContainer>
-      <HeaderViews title="Mi Perfil" />
-      <ProfileInfoHeader />
-      <LinksProfile />
+      <HeaderViews title="Tus Ultimos Servicios" />
+      <p>
+        Tus últimos Servicios se mostrarán aqui, asi como tu Servicio Activo.
+      </p>
       <Footer />
     </BasicContainer>
   );
 };
 
-export default Profile;
+export default LastServices;
