@@ -1,10 +1,38 @@
 import { useEffect, useState } from "react";
-import styled from "styled-components";
 import { showOrderDetail } from "../services/order-details-services";
 import { useAuth } from "../context/auth-context";
 import { NewLink } from "../styles/views/Profesions";
+import { BasicContainer, SubContainer } from "../styles/containers";
 import HeaderViews from "../components/HeaderViews";
 import Footer from "../components/Footer";
+import styled from "styled-components";
+import { azul } from "../styles/colors";
+
+const ContainerUser = styled.div`
+  width: 90%;
+  margin: 0 auto;
+`;
+const InfoUser = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: ${azul} 1px solid;
+  margin: 1rem 0;
+  padding: 0 1rem;
+`;
+const Photo = styled.img`
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  margin-bottom: 1.25rem;
+  box-shadow: 0px 10px 17px 8px rgb(57 57 57 / 15%);
+`;
+
+const NameUser = styled.p`
+  font-size: 2.5rem;
+  color: black;
+  font-weight: bold;
+`;
 
 function Equipo() {
   const [serviceDetail, setServiceDetail] = useState(null);
@@ -13,61 +41,41 @@ function Equipo() {
     showOrderDetail(user.id).then(setServiceDetail);
   }, [user.id]);
 
-  const Photo = styled.img`
-    width: 15.065rem;
-    height: 15.065rem;
-    border-radius: 50%;
-    margin-bottom: 1.25rem;
-    box-shadow: 0px 10px 17px 8px rgb(57 57 57 / 15%);
-  `;
-  let x
-  if(serviceDetail){
-    
-    x = serviceDetail.filter((value, index, self) =>
-    index === self.findIndex((t) => (
-      t.employee.full_name === value.employee.full_name
-  ))
-)
+  let x;
+  if (serviceDetail) {
+    x = serviceDetail.filter(
+      (value, index, self) =>
+        index ===
+        self.findIndex((t) => t.employee.full_name === value.employee.full_name)
+    );
   }
-  
-  return (
-    <div >
-    <HeaderViews title="Mi Equipo" />
-      <div>
-      {x ? (
-        x.map((service) => {
 
-          return (
-            <>
-              {service.active ? (
-                <>
-                  <div>
-                  <ul>
-                    <li>
-                      <NewLink to={`/employee_profile/?id=${service.employee.user_id}`}>
-                        <Photo alt="employee" src={service.employee.image_url} />
-                        <p>{service.employee.full_name}</p>
-                      </NewLink>
-                    </li>
-                  </ul>
-                    
-                  </div>
-                </>
-               
-              ) : ""}
-              
-            </>
-          );
-        })
-        
-      ) : (
-        <div>no hay datos aún</div>
-      )}
-      
-      </div>
+  return (
+    <BasicContainer>
+      <HeaderViews title="Mi Equipo" />
+      <SubContainer>
+        {x ? (
+          x.map((service) => (
+            <ContainerUser key={service.id}>
+              {service.active && (
+                <InfoUser>
+                  <Photo alt="employee" src={service.employee.image_url} />
+                  <NewLink
+                    to={`/employee_profile/?id=${service.employee.user_id}`}
+                  >
+                    <NameUser>{service.employee.full_name}</NameUser>
+                  </NewLink>
+                </InfoUser>
+              )}
+            </ContainerUser>
+          ))
+        ) : (
+          <div>no hay datos aún</div>
+        )}
+      </SubContainer>
       <Footer />
-    </div>
-  )
+    </BasicContainer>
+  );
 }
 
 export default Equipo;

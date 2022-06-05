@@ -10,3 +10,8 @@ export const BasicContainer = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+export const SubContainer = styled.div`
+  width: 100%;
+  margin: 1rem auto 15% auto;
+`;

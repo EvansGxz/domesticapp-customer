@@ -24,6 +24,8 @@ import ProfileEmployee from "../pages/Empleado";
 import LastServices from "../pages/profile/LastServices";
 import Terminos from "../pages/profile/Terminos";
 import Politicas from "../pages/profile/Politicas";
+// import Autorizacion from "../pages/profile/Autorizacion";
+
 import Payment from "../pages/Payment";
 import Process from "../pages/Processed";
 import MiCalendario from "../pages/MiCalendario";
@@ -32,7 +34,6 @@ import Servicios from "../pages/support/Servicios";
 import Empleados from "../pages/support/Empleados";
 import Tratamiento from "../pages/profile/Autorizacion";
 import Sup from "../pages/Sup";
-
 
 function Authenticated() {
   const { user } = useAuth();
@@ -48,12 +49,14 @@ function Authenticated() {
             <Route index element={<Navigate to="home" />} />
             <Route path="/" element={<Home />} />
             <Route path="/verification" element={<h2>Verify</h2>} />
+
             <Route path="/employee_profile" element={<ProfileEmployee />} />
-            <Route path="/select_service/:id" element={<ServiceStep1 />} />      
-            <Route
-              path="/employee_profile"
-              element={<ProfileEmployee />}
-            />
+            <Route path="/select_service/:id" element={<ServiceStep1 />} />
+
+            <Route path="/employee_profile" element={<ProfileEmployee />} />
+            <Route path="/select_service/:id" element={<ServiceStep1 />} />
+            <Route path="/employee_profile" element={<ProfileEmployee />} />
+
             <Route path="/select_service" element={<ServiceStep1 />} />
             <Route path="/select_service2" element={<ServiceStep2 />} />
             <Route path="/select_service3" element={<ServiceStep3 />} />

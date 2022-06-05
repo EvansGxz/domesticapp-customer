@@ -1,17 +1,17 @@
 import React from "react";
-import { Header } from "../components/HeaderViews";
+import HeaderViews from "../components/HeaderViews";
 import Footer from "../components/Footer";
 import { BasicContainer } from "../styles/containers";
 import MiCalendar from "../components/Calendario";
 
 const MiCalendario = () => {
-  return(
+  return (
     <BasicContainer>
-      <Header title="Mi Calendario" />
+      <HeaderViews title="Mi Calendario" />
       <MiCalendar />
       <Footer />
     </BasicContainer>
-  )
+  );
 };
 
 export default MiCalendario;
