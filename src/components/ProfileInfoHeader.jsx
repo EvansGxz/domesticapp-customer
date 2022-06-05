@@ -6,12 +6,13 @@ import {
   Container,
   Img,
   UserName,
-  Servicios,
+  Servicios
 } from "../styles/views/ProfileHeader";
 
 const ProfileInfoHeader = () => {
   const { user } = useAuth();
   return (
+    <>
     <ContainerInfo>
       <Container>
         <ContainerImg>
@@ -21,7 +22,7 @@ const ProfileInfoHeader = () => {
       </Container>
       <Servicios>325 Servicios Solicitados</Servicios>
     </ContainerInfo>
+    </>
   );
-};
-
+}
 export default ProfileInfoHeader;

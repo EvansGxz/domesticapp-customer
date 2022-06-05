@@ -1,5 +1,6 @@
 // import { useEffect } from "react";
 // import { useAuth } from "../context/auth-context";
+import { useNavigate } from "react-router-dom";
 import { Oficios } from "../constantes/oficios";
 import { ButtonStandard } from "../styles/buttons";
 import {
@@ -10,6 +11,7 @@ import {
 } from "../styles/views/Profesions";
 
 const Profesions = () => {
+  const navigate = useNavigate();
   // const { categories, getCategories } = useAuth();
   // useEffect(() => {
   //   getCategories();
@@ -38,7 +40,7 @@ const Profesions = () => {
         </div>
       )} */}
       </Container>
-      <ButtonStandard color="azul" marginB="7">
+      <ButtonStandard color="azul" marginB="7" onClick={() => navigate("/equipo")}>
         Conoce al Equipo
       </ButtonStandard>
     </>

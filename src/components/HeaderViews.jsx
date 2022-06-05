@@ -25,7 +25,7 @@ const Title = styled.p`
   font-size: 2rem;
 `;
 
-const HeaderViews = ({ title }) => {
+export default function HeaderViews ({ title }) {
   const navigate = useNavigate();
   return (
     <Container>
@@ -42,4 +42,12 @@ const HeaderViews = ({ title }) => {
   );
 };
 
-export default HeaderViews;
+export function Header ({ title }) {
+  return (
+    <Container>
+        <Title>{title ? title : ""}</Title>
+    </Container>
+  );
+};
+
+

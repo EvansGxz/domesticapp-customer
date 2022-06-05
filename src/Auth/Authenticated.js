@@ -31,6 +31,11 @@ import Autorizacion from '../pages/profile/Autorizacion'
 
 import Payment from "../pages/Payment";
 import Process from "../pages/Processed";
+import MiCalendario from "../pages/MiCalendario";
+import Equipo from "../pages/Equipo";
+import Servicios from "../pages/support/Servicios";
+import Empleados from "../pages/support/Empleados";
+import Tratamiento from "../pages/profile/Autorizacion";
 
 
 function Authenticated() {
@@ -41,11 +46,11 @@ function Authenticated() {
       <Routes>
         {user.full_name ? (
           <>
-            <Route path="//introduction" element={<Slider />} />
+            <Route path="/introduction" element={<Slider />} />
             <Route path="/*" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route index element={<Navigate to="home" />} />
-
+            <Route path="/" element={<Home />} />
             <Route path="/verification" element={<h2>Verify</h2>} />
 
 
@@ -85,14 +90,22 @@ function Authenticated() {
             <Route path="/services" element={"<ServicePage />"} />
             <Route path="/history" element={<History />} />
             <Route path="/cupons" element={<Cupons />} />
-            <Route path="/profile_employee" element={<ProfileForm />} />
+            <Route path="/profile_employee" element={<Empleados />} />
             <Route path="/address" element={<Direcciones />} />
             <Route path="/notification" element={<Notification />} />
             <Route path="/payment" element={<Payment />} />
 
+            <Route path="/mi_calendario" element={<MiCalendario />} />
+            <Route path="/equipo" element={<Equipo />} />
+            <Route path="/support/servicios" element={<Servicios />} />
+            <Route path="/editar" element={<ProfileForm />} />
+            <Route path="/terminos" element={<Terminos />} />
+            <Route path="/politicas" element={<Politicas />} />
+            <Route path="/tratamientos" element={<Tratamiento />} />
+
           </>
         ) : (
-          <Route path="/*" element={"<ProfileForm />"} />
+          <Route path="/*" element={<ProfileForm />} />
         )}
       </Routes>
     </>
