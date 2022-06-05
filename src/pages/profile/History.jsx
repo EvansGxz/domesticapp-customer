@@ -15,13 +15,13 @@ function History() {
   }, [user.id]);
 
   const Title = styled.h3`
-    color: #3D4451;
+    color: #3d4451;
     margin: 3rem auto;
   `;
   const Text = styled.p`
-   color: #3D4451;
-   margin: 3rem auto;
- `;
+    color: #3d4451;
+    margin: 3rem auto;
+  `;
   const Photo = styled.img`
     width: 62px;
     height: 62px;
@@ -31,115 +31,124 @@ function History() {
 
   const Container = styled.div`
     max-width: 90%;
-    margin: 0 auto;
+    margin: 0 auto 17% auto;
   `;
 
-const Info = styled.span`
-margin-left: 1rem;
-color: #3D4451;
-font-size: 16px;
-`;
+  const Info = styled.span`
+    margin-left: 1rem;
+    color: #3d4451;
+    font-size: 16px;
+  `;
 
-const ContainerText = styled.div`
-display: ruby;
-margin-left: 10px;
-padding-top: 20px;
-`;
-const Active = styled.div`
-  align-items: center;
-  width:50%;
-  text-align: right;
-  padding-top: 13%;
-`;
+  const ContainerText = styled.div`
+    display: ruby;
+    margin-left: 10px;
+    padding-top: 20px;
+  `;
+  const Active = styled.div`
+    align-items: center;
+    width: 50%;
+    text-align: right;
+    padding-top: 13%;
+  `;
   const NewLink = styled(Link)`
-  text-decoration: none;
-  display: flex;
-  width: 80%;
-`;
+    text-decoration: none;
+    display: flex;
+    width: 80%;
+  `;
 
- const ContainerIcon = styled.div`
-  display: flex;
-  border-bottom: 1px solid ${azul};
-  margin: 1.5rem 0;
-  padding-bottom: 1.5rem;
-`;
-  let x
-  if(serviceDetail){
-    
-    x = serviceDetail.filter((value, index, self) =>
-    index === self.findIndex((t) => (
-      t.employee.full_name === value.employee.full_name
-  ))
-)
+  const ContainerIcon = styled.div`
+    display: flex;
+    border-bottom: 1px solid ${azul};
+    margin: 1.5rem 0;
+    padding-bottom: 1.5rem;
+  `;
+  let x;
+  if (serviceDetail) {
+    x = serviceDetail.filter(
+      (value, index, self) =>
+        index ===
+        self.findIndex((t) => t.employee.full_name === value.employee.full_name)
+    );
   }
 
   return (
     <>
-    <HeaderViews title="Tus Ultimos Servicios" />
-    <Container >
-
-      <Text>Tus últimos Servicios se mostrarán aquí, así como tu Servicio Activo.</Text>
-      <div>
-      <Title>Servicios en Curso</Title>
-      {x ? (
-        x.map((service) => {
-          return (
-            <>
-              {service.active ? (
+      <HeaderViews title="Tus Ultimos Servicios" />
+      <Container>
+        <Text>
+          Tus últimos Servicios se mostrarán aquí, así como tu Servicio Activo.
+        </Text>
+        <div>
+          <Title>Servicios en Curso</Title>
+          {x ? (
+            x.map((service) => {
+              return (
                 <>
-                <ContainerIcon>     
-                      <NewLink to={`/employee_profile/?id=${service.employee.user_id}`}>
-                        <Photo alt="employee" src={service.employee.image_url} />
-                        <ContainerText>
-                        <Info>{service.employee.full_name}</Info></ContainerText>
-                      </NewLink>     
+                  {service.active ? (
+                    <>
+                      <ContainerIcon>
+                        <NewLink
+                          to={`/employee_profile/?id=${service.employee.user_id}`}
+                        >
+                          <Photo
+                            alt="employee"
+                            src={service.employee.image_url}
+                          />
+                          <ContainerText>
+                            <Info>{service.employee.full_name}</Info>
+                          </ContainerText>
+                        </NewLink>
                         <Active>Activo</Active>
-                                 
-                  </ContainerIcon>
+                      </ContainerIcon>
+                    </>
+                  ) : (
+                    ""
+                  )}
                 </>
-               
-              ) : ""}
-              
-            </>
-          );
-        })
-        
-      ) : (
-        <div>no hay datos aún</div>
-      )}<br/>
-      <Title>Ultimos Servicios</Title>
-      {x ? (
-        x.map((service) => {
-          console.log(service);
-          return (
-            <>
-              {!service.active ? (
+              );
+            })
+          ) : (
+            <div>no hay datos aún</div>
+          )}
+          <br />
+          <Title>Ultimos Servicios</Title>
+          {x ? (
+            x.map((service) => {
+              console.log(service);
+              return (
                 <>
-                <ContainerIcon>     
-                      <NewLink to={`/employee_profile/?id=${service.employee.user_id}`}>
-                        <Photo alt="employee" src={service.employee.image_url} />
-                        <ContainerText>
-                        <Info>{service.employee.full_name}</Info></ContainerText>
-                      </NewLink>     
+                  {!service.active ? (
+                    <>
+                      <ContainerIcon>
+                        <NewLink
+                          to={`/employee_profile/?id=${service.employee.user_id}`}
+                        >
+                          <Photo
+                            alt="employee"
+                            src={service.employee.image_url}
+                          />
+                          <ContainerText>
+                            <Info>{service.employee.full_name}</Info>
+                          </ContainerText>
+                        </NewLink>
                         <Active>Activo</Active>
-                                 
-                  </ContainerIcon>
+                      </ContainerIcon>
+                    </>
+                  ) : (
+                    ""
+                  )}
                 </>
-               
-              ) : ""}
-              
-            </>
-          );
-        })
-        
-      ) : (
-        <div>no hay datos aún</div>
-      )}
-      </div>
-    </Container>
-    <Footer />
+              );
+            })
+          ) : (
+            <div>no hay datos aún</div>
+          )}
+        </div>
+      </Container>
+      <Footer />
     </>
-  )
+  );
 }
 
 export default History;

@@ -31,7 +31,7 @@ const ServiceStep4 = () => {
       <HeaderViews title="detalles" />
       <Detalles />
       <GoogleMapp />
-      <ButtonStandard color="azul" marginB="5" onClick={pay}>
+      <ButtonStandard color="azul" marginB="6" onClick={pay}>
         Continuar
       </ButtonStandard>
       <Footer />

@@ -8,7 +8,6 @@
     "@fortawesome/free-brands-svg-icons": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/react-fontawesome": "^0.1.18",
-    "@mobiscroll/react": "https://npm.mobiscroll.com/@mobiscroll/react-trial/-/react-trial-5.16.2.tgz",
     "@react-google-maps/api": "^2.10.2",
     "@syncfusion/ej2-react-calendars": "^20.1.58",
     "@testing-library/jest-dom": "^5.16.4",
