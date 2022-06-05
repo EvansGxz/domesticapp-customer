@@ -1,20 +1,14 @@
 import React from "react";
 import { useAuth } from "../context/auth-context";
 import {
-  SupportContainer,
-  NewLink,
-  Info,
-  ContainerIcon,
-} from "../styles/views/Support";
-import {
   ContainerImg,
   ContainerInfo,
   Container,
   Img,
   UserName,
-  Servicios,
+  Servicios
 } from "../styles/views/ProfileHeader";
-import { IconsPerfil } from "../constantes/perfil";
+
 const ProfileInfoHeader = () => {
   const { user } = useAuth();
   return (
