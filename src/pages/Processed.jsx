@@ -31,6 +31,7 @@ function Process(){
       DeleteCuponUser(cuponID);
     }
     localStorage.clear();
+    
   });
   
   return (
